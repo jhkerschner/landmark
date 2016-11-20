@@ -7,17 +7,28 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="wrapper" class="hfeed">
-<header id="header" role="banner">
-<section id="branding">
-<div id="site-title"><?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?></div>
-<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-</section>
-<nav id="menu" role="navigation">
-<div id="search">
-<?php get_search_form(); ?>
-</div>
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-</nav>
-</header>
-<div id="container">
+  <nav class="mega-nav open">
+    <div class="container">
+      <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="header">
+      <div class="container">
+        <div class="header-logo-col">
+          <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('template_url').'/assets/images/header-logo.png'; ?>" alt="Landmark Theatre | Home"></a>
+
+        </div>
+        <nav class="nav-triggers">
+          <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
+          <ul class="main-nav">
+            <li><a class="main-nav-item" data-nav-id="0" href="">Box Office</a></li>
+            <li><a class="main-nav-item" data-nav-id="1" href="">Events</a></li>
+            <li><a class="main-nav-item" data-nav-id="2" href="">Membership</a></li>
+            <li><a class="main-nav-item" data-nav-id="3" href="">About</a></li>
+            <li><a class="main-nav-item" data-nav-id="4" href="">Rent</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+      

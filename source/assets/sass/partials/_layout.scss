@@ -1,0 +1,160 @@
+// ----------------------------------------------------------
+// layout
+// ----------------------------------------------------------
+
+html, body {
+  background-color: $goldLight;
+  padding: 0;
+}
+svg {
+  width: 100%;
+}
+
+.container{
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type:none;
+  }
+}
+
+// ----------------------------------------------------------
+// Header an Navigation
+// ----------------------------------------------------------
+
+.mega-nav {
+  background-color: $redDark;
+  padding: 1rem 0 2rem 0;
+
+  .menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  .page_item {
+    text-transform: uppercase;
+    a {
+      &:link, &:visited{
+        color: $redLight;
+      }
+      &:hover, &:active{
+        color: $redLight;
+        text-decoration: underline;
+      }
+      &.focused {
+        &:link, &:visited{
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  box-shadow: 0px 60px 160px 80px rgba(0,0,0,0.3);
+}
+
+.header{
+  @include clearfix;
+}
+
+.header-logo-col {
+  width: 137px;
+  float: left;
+}
+
+.nav-triggers {
+  float:right;
+}
+
+.hamburger {
+  display: block;
+  width: 70px;
+  @include breakpoint($desktop){
+    display: none;
+  }
+}
+
+.main-nav {
+  display: none;
+
+  @include breakpoint($desktop){
+    display: block;
+  }
+
+  li{
+    list-style-type: none;
+  }
+}
+.main-nav-item {
+  &:link, &:visited{
+    color: $black;
+  }
+  &:hover, &:active{
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+// ----------------------------------------------------------
+// Site Footer
+// ----------------------------------------------------------
+
+.site-footer {
+  background-color: $brown;
+  @include clearfix;
+  padding: 0 0 1rem;
+}
+
+.footer-left-col {
+  padding: 1rem 0 0 0;
+  @include breakpoint($tablet){
+    @include span(6);
+  }
+}
+
+.footer-right-col {
+  padding: 1rem 0 0 0;
+  @include breakpoint($tablet){
+    @include span(last 6);
+    padding: 3rem 0 0 0;
+  }
+}
+
+.footer-logo {
+  display: block;
+  width: 81px;
+}
+
+.social-icons {
+  text-align: right;
+}
+
+.social-icon {
+  fill: $white;
+  display: inline-block;
+  margin: 0 0.4rem;
+  width: 1.5rem;
+
+  &:link, &:visited{
+    color: $white;
+  }
+  &:hover, &:active{
+    
+  }
+}
+
+.copyright {
+  color: $white;
+  opacity: 0.32;
+  @include breakpoint($tablet){
+    text-align: right;
+  }
+}

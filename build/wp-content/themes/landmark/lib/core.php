@@ -30,5 +30,5 @@ function landmark_load_scripts()
 	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), '3.1.1', true);
 
 	//load custom scripts
-	//wp_enqueue_script( 'keybank-js', get_template_directory_uri() . '/assets/js/script.min.js', array(), filemtime(get_template_directory() . '/assets/js/script.min.js'), true );
+	wp_enqueue_script( 'landmark-js', get_template_directory_uri() . '/assets/js/script.min.js', array(), filemtime(get_template_directory() . '/assets/js/script.min.js'), true );
 }
