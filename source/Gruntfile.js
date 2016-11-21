@@ -27,6 +27,7 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= buildRoot %>/js/script.min.js': [
+            '<%= sourceRoot %>/js/jquery.bxslider.js',
             '<%= sourceRoot %>/js/script.js'
           ],
           '<%= buildRoot %>/js/ie-polys.js': [
@@ -40,6 +41,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           '<%= buildRoot %>/js/script.min.js': [
+            '<%= sourceRoot %>/js/jquery.bxslider.js',
             '<%= sourceRoot %>/js/script.js'
           ],
           '<%= buildRoot %>/js/ie-polys.js': [

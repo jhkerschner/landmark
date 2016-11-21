@@ -1,10 +1,18 @@
+
 $(function(){
   MainNav.init();
+  $('.bxslider').bxSlider({
+    nextSelector: '#bx-next',
+    prevSelector: '#bx-prev',
+    nextText: '>',
+    prevText: '<',
+    pager: false,
+  });
 });
 
 MainNav = {
   init: function() {
-    console.log("MainNav.init()")
-    $($('.mega-nav .page_item')[0]).addClass('focused')
+    $($('.mega-nav .page_item')[0]).addClass('focused');
   }
-}
+};
+

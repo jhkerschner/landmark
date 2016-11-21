@@ -14,9 +14,20 @@
   </nav>
   <div class="wrapper">
     <div class="header">
-      <div class="container">
+      <div class="home-slider">
+        <img class="header-mask" src="<?php echo get_bloginfo('template_url').'/assets/images/header-mask.png'; ?>" alt="">
+        <ul class="bxslider">
+          <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
+          <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt=""></li>
+        </ul>
+        <div class="controls">
+          <div id="bx-next"></div>
+          <div id="bx-prev"></div>
+        </div>
+      </div>
+      <div class="home-slider-container">
         <div class="header-logo-col">
-          <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('template_url').'/assets/images/header-logo.png'; ?>" alt="Landmark Theatre | Home"></a>
+          <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('template_url').'/assets/images/header-logo2.png'; ?>" alt="Landmark Theatre | Home"></a>
 
         </div>
         <nav class="nav-triggers">

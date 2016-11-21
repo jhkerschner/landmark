@@ -14,6 +14,7 @@ svg {
   max-width: 1060px;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
 }
 
 .menu {
@@ -63,6 +64,38 @@ svg {
 
 .header{
   @include clearfix;
+  position: relative;
+}
+
+.home-slider {
+  img{
+    display: block;
+  }
+}
+
+.home-slider-container {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  left: 50%;
+  margin-left: -44%;
+}
+
+.bxslider {
+  position: relative;
+  width: 100%;
+  font-size: 0;
+}
+
+.slide {
+  top: -1px;
+}
+
+.header-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .header-logo-col {
@@ -90,6 +123,7 @@ svg {
   }
 
   li{
+    display: inline-block;
     list-style-type: none;
   }
 }
