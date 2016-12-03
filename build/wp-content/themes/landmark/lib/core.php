@@ -31,4 +31,29 @@ function landmark_load_scripts()
 
 	//load custom scripts
 	wp_enqueue_script( 'landmark-js', get_template_directory_uri() . '/assets/js/script.min.js', array(), filemtime(get_template_directory() . '/assets/js/script.min.js'), true );
+
+	wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAzwTdKCf1emgz3MeBCNQHDDVVcT_esQic&libraries=places&callback=initMap', array(), '', true);
+	
+}
+
+add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
+function add_defer_attribute($tag, $handle) {
+   $scripts_to_defer = array('google-maps');
+   foreach($scripts_to_defer as $defer_script) :
+      if ($defer_script === $handle) :
+         return str_replace(' src', 'defer async src', $tag);
+      endif;
+   endforeach;
+   return $tag;
+}
+
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+function add_async_attribute($tag, $handle) {
+   $scripts_to_async = array('google-maps');
+   foreach($scripts_to_async as $async_script) :
+      if ($async_script === $handle) :
+         return str_replace(' src', ' async="async" src', $tag);
+      endif;
+   endforeach;
+   return $tag;
 }

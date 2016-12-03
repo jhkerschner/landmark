@@ -1,4 +1,5 @@
     </div><!-- End Body -->
+    <?php get_template_part('template-parts/tp-google-map'); ?>
     <footer class="site-footer">
       <div class="container">
         <div class="footer-left-col">
