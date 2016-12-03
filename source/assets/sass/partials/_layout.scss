@@ -3,13 +3,16 @@
 // ----------------------------------------------------------
 
 html, body {
-  background-color: $goldLight;
+  background-color: $redDark;
   padding: 0;
 }
 svg {
   width: 100%;
 }
-
+.body {
+  background-color: $goldLight;
+  padding: 1rem 0;
+}
 .container{
   max-width: 1060px;
   margin: 0 auto;
@@ -27,19 +30,29 @@ svg {
 }
 
 // ----------------------------------------------------------
-// Header an Navigation
+// Header and Navigation
 // ----------------------------------------------------------
 
 .mega-nav {
   background-color: $redDark;
-  padding: 1rem 0 2rem 0;
+  padding: 0;
+  transition: max-height 400ms ease-in-out;
+  overflow:hidden;
+  max-height: 0;
+
+  &.open{
+    max-height: 400px;
+    height: auto;
+  }
 
   .menu {
     margin: 0;
-    padding: 0;
+    padding: 1rem 0 2rem 0;
   }
 
   .page_item {
+    display: inline-block;
+    margin: 0 4rem 0 0;
     text-transform: uppercase;
     a {
       &:link, &:visited{
@@ -56,6 +69,12 @@ svg {
       }
     }
   }
+  .mega-nav-close {
+    color: $redLight;
+    cursor: pointer;
+    float:right;
+    font-size: 3rem;
+  }
 }
 
 .wrapper {
@@ -68,12 +87,20 @@ svg {
 }
 
 .home-slider {
+  position: relative;
+
   img{
     display: block;
+    width: 100%;
   }
 }
-
+.controls{
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
 .home-slider-container {
+  padding-top: 30px;
   position: absolute;
   top: 0;
   z-index: 3;
@@ -85,6 +112,10 @@ svg {
   position: relative;
   width: 100%;
   font-size: 0;
+}
+.bx-wrapper .bx-viewport {
+  transform: none;
+  background-color: $black;
 }
 
 .slide {
@@ -118,16 +149,27 @@ svg {
 .main-nav {
   display: none;
 
+  
   @include breakpoint($desktop){
     display: block;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+
+    &.visible {
+      opacity: 1;
+    }
   }
 
   li{
     display: inline-block;
     list-style-type: none;
+
+    @include breakpoint($desktop){
+      margin-right: 4rem;
+    }
   }
 }
-.main-nav-item {
+.main-nav-link {
   &:link, &:visited{
     color: $black;
   }

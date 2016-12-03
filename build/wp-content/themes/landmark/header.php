@@ -7,9 +7,10 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <nav class="mega-nav open">
+  <nav class="mega-nav">
     <div class="container">
       <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+      <div class="mega-nav-close">&times;</div>
     </div>
   </nav>
   <div class="wrapper">
@@ -27,19 +28,30 @@
       </div>
       <div class="home-slider-container">
         <div class="header-logo-col">
-          <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('template_url').'/assets/images/header-logo2.png'; ?>" alt="Landmark Theatre | Home"></a>
+          <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php include (get_template_directory().'/assets/images/header-logo.svg'); ?></a>
 
         </div>
         <nav class="nav-triggers">
           <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
-          <ul class="main-nav">
-            <li><a class="main-nav-item" data-nav-id="0" href="">Box Office</a></li>
-            <li><a class="main-nav-item" data-nav-id="1" href="">Events</a></li>
-            <li><a class="main-nav-item" data-nav-id="2" href="">Membership</a></li>
-            <li><a class="main-nav-item" data-nav-id="3" href="">About</a></li>
-            <li><a class="main-nav-item" data-nav-id="4" href="">Rent</a></li>
+          <ul class="main-nav visible">
+            <li class="main-nav-item">
+              <a class="main-nav-link" href="">Box Office</a>
+            </li>
+            <li class="main-nav-item">
+              <a class="main-nav-link" href="">Events</a>
+            </li>
+            <li class="main-nav-item">
+              <a class="main-nav-link" href="">Membership</a>
+            </li>
+            <li class="main-nav-item">
+              <a class="main-nav-link" href="">About</a>
+            </li>
+            <li class="main-nav-item">
+              <a class="main-nav-link" href="">Rent</a>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
+    <div class="body">
       
