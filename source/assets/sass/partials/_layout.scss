@@ -98,7 +98,30 @@ svg {
   position: absolute;
   top: 50%;
   z-index: 2;
+  width: 100%;
 }
+.slider-control{
+  opacity: .37;
+  cursor: pointer;
+  width: 24px;
+
+  &:hover,&:active{
+    opacity: 1;
+    
+    path{
+      fill: $gold;
+    }
+  }
+}
+.slider-control-left{
+  float: left;
+  margin-left: 1rem;
+}
+.slider-control-right{
+  float: right;
+  margin-right: 1rem;
+}
+
 .home-slider-container {
   padding-top: 30px;
   position: absolute;

@@ -22,8 +22,8 @@
           <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt=""></li>
         </ul>
         <div class="controls">
-          <div id="bx-next"></div>
-          <div id="bx-prev"></div>
+          <div id="bx-next" class="slider-control slider-control-right"><?php include (get_template_directory().'/assets/images/arrow-right.svg'); ?></div>
+          <div id="bx-prev" class="slider-control slider-control-left"><?php include (get_template_directory().'/assets/images/arrow-left.svg'); ?></div>
         </div>
       </div>
       <div class="home-slider-container">

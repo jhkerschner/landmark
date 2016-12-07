@@ -4,8 +4,8 @@ $(function(){
   $('.bxslider').bxSlider({
     nextSelector: '#bx-next',
     prevSelector: '#bx-prev',
-    nextText: '>',
-    prevText: '<',
+    nextText: '',
+    prevText: '',
     pager: false,
   });
 });
