@@ -10,7 +10,7 @@
   <nav class="mega-nav">
     <div class="container">
       <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-      <div class="mega-nav-close">&times;</div>
+      <div class="mega-nav-close"><?php include (get_template_directory().'/assets/images/close-x.svg'); ?></div>
     </div>
   </nav>
   <div class="wrapper">

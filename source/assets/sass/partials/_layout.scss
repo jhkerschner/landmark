@@ -69,11 +69,21 @@ svg {
       }
     }
   }
-  .mega-nav-close {
-    color: $redLight;
-    cursor: pointer;
-    float:right;
-    font-size: 3rem;
+}
+.mega-nav-close {
+  color: $redLight;
+  cursor: pointer;
+  float:right;
+  font-size: 3rem;
+  width: 40px;
+  opacity: 0.3;
+
+  &:hover, &:active {
+    opacity: 1;
+
+    polygon{
+      fill: $gold;
+    }
   }
 }
 
@@ -103,7 +113,6 @@ svg {
 .slider-control{
   opacity: .37;
   cursor: pointer;
-  width: 24px;
 
   &:hover,&:active{
     opacity: 1;

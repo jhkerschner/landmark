@@ -7,13 +7,16 @@ $(function(){
     nextText: '',
     prevText: '',
     pager: false,
+    onSliderLoad: function() {
+      $('.bx-prev')[0].appendChild($('.slider-control-left svg')[0])
+      $('.bx-next')[0].appendChild($('.slider-control-right svg')[0])
+    }
   });
 });
 
 MainNav = {
   init: function() {
-    // $($('.mega-nav .page_item')[0]).addClass('focused');
-    $('.main-nav-link, .mega-nav-close').on('click touch', function(e){
+    $('.hamburger, .main-nav-link, .mega-nav-close').on('click touch', function(e){
       e.preventDefault();
       $('.mega-nav').toggleClass('open');
       $('.main-nav').toggleClass('visible');
