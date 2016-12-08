@@ -1,8 +1,12 @@
 html {
-  font-size: $baseFontSize + px;
+  font-size: 12px;
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: $text;
+
+  @include breakpoint(720px){
+    font-size: $baseFontSize + px;
+  }
 }
 
 h1 {
