@@ -41,19 +41,20 @@ svg {
   max-height: 0;
 
   &.open{
-    max-height: 400px;
+    max-height: 800px;
     height: auto;
   }
 
-  .menu {
+  #menu-mega-nav {
+    @include container;
     margin: 0;
     padding: 1rem 0 2rem 0;
   }
 
-  .page_item {
-    display: inline-block;
-    margin: 0 4rem 0 0;
+  .menu-item-has-children {
+    font-size: 1.125rem;
     text-transform: uppercase;
+    margin-bottom: 2rem;
     a {
       &:link, &:visited{
         color: $redLight;
@@ -62,18 +63,52 @@ svg {
         color: $redLight;
         text-decoration: underline;
       }
-      &.focused {
+    }
+    &.focused {
+      a {
         &:link, &:visited{
           color: $white;
         }
+        &:hover, &:active{
+          color: $white;
+          text-decoration: underline;
+        }
       }
     }
+    
+    @include breakpoint($tablet){
+      @include span(5 of 10);
+
+      &:nth-child(2n) {
+        @include span(last 5 of 10);
+      }
+    }
+
+    @include breakpoint($desktop){
+      @include span(2 of 10);
+
+      &:nth-child(2n) {
+        @include span(2 of 10);
+      }
+      &:last-child {
+        @include span(last 2 of 10);
+      }
+    }
+
+  }
+  .sub-menu {
+    font-size: 1rem;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
   }
 }
 .mega-nav-close {
   color: $redLight;
   cursor: pointer;
-  float:right;
+  position: absolute;
+  top:0;
+  right:1.5rem;
   font-size: 3rem;
   width: 40px;
   opacity: 0.3;
@@ -85,6 +120,10 @@ svg {
       fill: $gold;
     }
   }
+
+  @include breakpoint($desktop){
+    right:0;
+  }
 }
 
 .wrapper {
@@ -92,6 +131,7 @@ svg {
 }
 
 .header{
+  overflow: hidden;
   @include clearfix;
   position: relative;
   background-color: $white;
@@ -173,16 +213,21 @@ svg {
 }
 
 .home-slider-container {
-  padding: 1rem 1rem 0;
+  padding: 0.5rem 1.5rem 0;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width:100%;
-  max-width: 1060px;
+  max-width: 1200px;
 
-  @include breakpoint($tablet){
-    padding-top: 2rem;
+  @include breakpoint(1200px){
+    font-size: 1.125rem;
+    padding: 2rem 1.5rem 0;
+    width: 1200px;
+    margin: 0 auto;
+    margin-left: -600px;
+    left: 50%;
   }
 }
 
@@ -210,7 +255,7 @@ svg {
 .header-logo-col {
   width: 61px;
   float: left;
-  margin-top: -0.5rem;
+  margin-right: 2.5rem;
 
   @include breakpoint(370px){
     width: 91px;
@@ -219,9 +264,8 @@ svg {
     width: 104px;
   }
 
-  @include breakpoint($tablet){
+  @include breakpoint($desktop){
     width: 137px;
-    margin-top: 2rem;
   }
 }
 
@@ -236,58 +280,60 @@ svg {
 .hamburger {
   display: block;
   width: 35px;
+  margin-top: 0.5rem;
 
   @include breakpoint(370px){
     width: 45px;
-  }
-  @include breakpoint(513px){
-    width: 60px;
-  }
-  @include breakpoint(640px){
-    width: 70px;
   }
   @include breakpoint(860px){
     display: none;
     
   }
   @include breakpoint($desktop){
+
   }
 }
 
-.main-nav {
+#menu-top-nav {
   display: none;
-
-  
-  @include breakpoint(860px){
-    display: block;
-    opacity: 0;
-    transition: opacity 400ms ease-in-out;
-
-    &.visible {
-      opacity: 1;
-    }
-  }
 
   li{
     display: inline-block;
     list-style-type: none;
 
+    
     @include breakpoint(860px){
       margin-right: 1rem;
     }
 
     @include breakpoint($desktop){
       margin-right: 4rem;
+    }  
+  }
+  a {
+    text-transform: uppercase;
+    cursor: default;
+    &:link, &:visited{
+      color: $brown;
+    }
+    &:hover, &:active{
+      color: $brown;
+      text-decoration: underline;
     }
   }
-}
-.main-nav-link {
-  &:link, &:visited{
-    color: $black;
+  &.visible {
+    opacity: 1;
+
+    a {
+      cursor: pointer;
+    }
   }
-  &:hover, &:active{
-    color: $black;
-    text-decoration: underline;
+  
+  @include breakpoint(860px){
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 400ms ease-in-out;
   }
 }
 

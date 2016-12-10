@@ -9,8 +9,8 @@
 <body <?php body_class(); ?>>
   <nav class="mega-nav">
     <div class="container">
-      <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
       <div class="mega-nav-close"><?php include (get_template_directory().'/assets/images/close-x.svg'); ?></div>
+      <?php wp_nav_menu( array( 'menu' => 'mega-menu' ) ); ?>
     </div>
   </nav>
   <div class="wrapper">
@@ -33,7 +33,8 @@
         </div>
         <nav class="nav-triggers">
           <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
-          <ul class="main-nav visible">
+          <?php wp_nav_menu( array( 'menu' => 'top-nav' ) ); ?>
+<!--           <ul class="main-nav visible">
             <li class="main-nav-item">
               <a class="main-nav-link" href="">Box Office</a>
             </li>
@@ -49,7 +50,7 @@
             <li class="main-nav-item">
               <a class="main-nav-link" href="">Rent</a>
             </li>
-          </ul>
+          </ul> -->
         </nav>
       </div>
     </div>
