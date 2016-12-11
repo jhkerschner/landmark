@@ -12,7 +12,7 @@ function get_landmark_events() {
 			$grouped_events[$event['id']] = array(
 				'title' => $event['title'],
 				'description' => $event['description'],
-				'image' => $event['main_image'],
+				'image' => str_replace('http://','https://',$event['main_image']),
 				'ticket_link' => $event['ticket_link'],
 				'dates' => array($event['event_date'])
 				);
