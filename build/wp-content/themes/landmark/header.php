@@ -19,7 +19,7 @@
         <img class="header-mask" src="<?php echo get_bloginfo('template_url').'/assets/images/header-mask.png'; ?>" alt="">
         <ul class="bxslider">
           <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
-          <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt=""></li>
+          <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
         </ul>
         <div class="controls">
           <div id="bx-next" class="slider-control slider-control-right"><?php include (get_template_directory().'/assets/images/arrow-right.svg'); ?></div>
@@ -34,23 +34,6 @@
         <nav class="nav-triggers">
           <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
           <?php wp_nav_menu( array( 'menu' => 'top-nav' ) ); ?>
-<!--           <ul class="main-nav visible">
-            <li class="main-nav-item">
-              <a class="main-nav-link" href="">Box Office</a>
-            </li>
-            <li class="main-nav-item">
-              <a class="main-nav-link" href="">Events</a>
-            </li>
-            <li class="main-nav-item">
-              <a class="main-nav-link" href="">Membership</a>
-            </li>
-            <li class="main-nav-item">
-              <a class="main-nav-link" href="">About</a>
-            </li>
-            <li class="main-nav-item">
-              <a class="main-nav-link" href="">Rent</a>
-            </li>
-          </ul> -->
         </nav>
       </div>
     </div>

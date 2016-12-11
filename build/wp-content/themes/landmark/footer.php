@@ -1,4 +1,5 @@
-    </div><!-- End Body -->
+
+    </div><!-- End Body -->    
     <?php get_template_part('template-parts/tp-google-map'); ?>
     <footer class="site-footer">
       <div class="container">
@@ -17,7 +18,7 @@
           </div>
           <p class="copyright">&copy; Landmark Theatre 362 S. Salina Street, Syracuse, NY 13202</p>
         </div>
-      </div>
+      </div>  
     </footer>
   </div><!-- End Wrapper -->
   <?php wp_footer(); ?>
