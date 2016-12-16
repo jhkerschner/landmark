@@ -6,11 +6,16 @@ html {
 }
 
 h1 {
-  margin: 0 0 1.24em;
+  margin: 0 0 0.4em;
+  font-size: 3.75rem;
+  color: $brown;
+  line-height: 1.24em;
 }
 
 h2 {
-  margin: 0 0 1.24em;
+  font-size: 2.25rem;
+  margin: 0 0 0.6em;
+  color: $brown;
 }
 
 h3 {

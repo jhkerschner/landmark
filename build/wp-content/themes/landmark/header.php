@@ -15,18 +15,24 @@
   </nav>
   <div class="wrapper">
     <div class="header">
-      <div class="home-slider">
-        <img class="header-mask" src="<?php echo get_bloginfo('template_url').'/assets/images/header-mask.png'; ?>" alt="">
-        <ul class="bxslider">
-          <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
-          <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
-        </ul>
-        <div class="controls">
-          <div id="bx-next" class="slider-control slider-control-right"><?php include (get_template_directory().'/assets/images/arrow-right.svg'); ?></div>
-          <div id="bx-prev" class="slider-control slider-control-left"><?php include (get_template_directory().'/assets/images/arrow-left.svg'); ?></div>
+      <?php if (is_front_page()) : ?>
+        <div class="home-slider">
+          <img class="header-mask" src="<?php echo get_bloginfo('template_url').'/assets/images/header-mask.png'; ?>" alt="">
+          <ul class="bxslider">
+            <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt=""></li>
+            <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
+          </ul>
+          <div class="controls">
+            <div id="bx-next" class="slider-control slider-control-right"><?php include (get_template_directory().'/assets/images/arrow-right.svg'); ?></div>
+            <div id="bx-prev" class="slider-control slider-control-left"><?php include (get_template_directory().'/assets/images/arrow-left.svg'); ?></div>
+          </div>
         </div>
-      </div>
-      <div class="home-slider-container">
+      <? else: ?>
+        <div class="subpage-banner">
+          <img src="<?php echo get_bloginfo('template_url').'/assets/images/subpage-banner.jpg'; ?>" alt="">
+        </div>
+      <?php endif; ?>
+      <div class="header-container">
         <div class="header-logo-col">
           <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php include (get_template_directory().'/assets/images/header-logo.svg'); ?></a>
 

@@ -12,12 +12,16 @@ $args = array(
 );
 $memberships = get_posts($args);
 ?>
-
-<?php foreach($memberships as $post) : setup_postdata($post); ?>
-	<?php wc_get_template_part( 'content', 'product' ); ?>
-
-<?php endforeach; wp_reset_postdata();?>
-
-
-
-<?php get_footer(); ?>u
+<div class="container">
+  <div class="row">
+    <div class="left-col">
+      <?php foreach($memberships as $post) : setup_postdata($post); ?>
+      	<?php wc_get_template_part( 'content', 'product' ); ?>
+      <?php endforeach; wp_reset_postdata();?>
+    </div>
+    <div class="right-col">
+      
+    </div>
+  </div>
+</div>
+<?php get_footer(); ?>

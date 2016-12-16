@@ -3,26 +3,41 @@
 // ----------------------------------------------------------
 
 html, body {
-  background-color: $redDark;
+  background-color: $goldLight;
   padding: 0;
 }
+
 svg {
   width: 100%;
 }
+
 .body {
-  background-color: $goldLight;
-  padding: 1rem 0;
+  padding: 0 0 4rem;
+  margin-top: -1px;
   position: relative;
-  top: -1px;
   z-index: 3;
 }
+
 .container{
-  max-width: 1060px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
 }
-
+.row {
+  @include container;
+}
+.left-col {
+  @include breakpoint($tablet){
+    @include span(8 of 12);
+  }
+}
+.right-col {
+  @include breakpoint($tablet){
+    
+    @include span(last 4 of 12);
+  }
+}
 .menu {
   margin: 0;
   padding: 0;
@@ -215,14 +230,24 @@ svg {
   margin-right: 1rem;
 }
 
-.home-slider-container {
-  padding: 0.5rem 1.5rem 0;
+.header-container {
+  padding: 0.5rem 1.5rem 0 2rem;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width:100%;
   max-width: 1200px;
+
+  @include breakpoint(370px){
+    padding: 0.5rem 1.5rem 0 2rem;
+  }
+  @include breakpoint(513px){
+    padding: 0.5rem 1.5rem 0 3rem;
+  }
+  @include breakpoint($desktop){
+    padding: 0.5rem 1.5rem 0 4rem;
+  }
 
   @include breakpoint(1200px){
     font-size: 1.125rem;
@@ -231,6 +256,36 @@ svg {
     margin: 0 auto;
     margin-left: -600px;
     left: 50%;
+  }
+}
+.home {
+  .header-container{
+    padding: 0.5rem 1.5rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width:100%;
+    max-width: 1200px;
+
+    @include breakpoint(370px){
+      padding: 0.5rem 1.5rem 0;
+    }
+    @include breakpoint(513px){
+      padding: 0.5rem 1.5rem 0;
+    }
+    @include breakpoint($desktop){
+      padding: 0.5rem 1.5rem 0;
+    }
+
+    @include breakpoint(1200px){
+      font-size: 1.125rem;
+      padding: 2rem 1.5rem 0 2rem;
+      width: 1200px;
+      margin: 0 auto;
+      margin-left: -600px;
+      left: 50%;
+    }
   }
 }
 
@@ -261,14 +316,31 @@ svg {
   margin-right: 2.5rem;
 
   @include breakpoint(370px){
-    width: 91px;
+    width: 71px;
   }
   @include breakpoint(513px){
-    width: 104px;
+    width: 90px;
   }
-
   @include breakpoint($desktop){
-    width: 137px;
+    width: 102px;
+  }
+}
+
+.home {
+  .header-logo-col{
+    width: 61px;
+    float: left;
+    margin-right: 2.5;
+
+    @include breakpoint(370px){
+      width: 91px;
+    }
+    @include breakpoint(513px){
+      width: 104px;
+    }
+    @include breakpoint($desktop){
+      width: 137px;
+    }
   }
 }
 
@@ -342,7 +414,18 @@ svg {
 .home-features {
   margin-top: -6rem;
   @include container;
-  padding: 0 0 6rem;
+}
+
+.subpage-banner {
+
+  img {
+    min-width: 120%;
+    display: block;
+
+    @include breakpoint(860px){
+      min-width: 100%;
+    }
+  }
 }
 
 // ----------------------------------------------------------
@@ -377,9 +460,10 @@ svg {
   margin: 0 0 1rem 0;
 }
 .cta-button {
+  display: inline-block;
   font-size: 0.75rem;
   height: 24px;
-  padding: .3rem 1.7rem .3rem 0.56rem;
+  padding: 0.2rem 1.7rem .3rem .56rem;
   position: relative;
 
   &:link, &:visited{
@@ -409,6 +493,10 @@ svg {
 // ----------------------------------------------------------
 // Footer Map
 // ----------------------------------------------------------
+
+.footer-map {
+  background-color: $goldLight;
+}
 .footer-map-title {
   color: $brown;
   font-size: 1.8125rem;
@@ -458,7 +546,9 @@ svg {
 }
 
 .social-icons {
-  text-align: right;
+  @include breakpoint($tablet){
+    text-align: right;
+  }
 }
 
 .social-icon {
