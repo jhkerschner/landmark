@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <?php wp_head(); ?>
+<?php get_template_part('template-parts/tp-google-analytics'); ?>
 </head>
 <body <?php body_class(); ?>>
   <nav class="mega-nav">
     <div class="container">
       <div class="mega-nav-close"><?php include (get_template_directory().'/assets/images/close-x.svg'); ?></div>
-      <?php wp_nav_menu( array( 'menu' => 'mega-menu' ) ); ?>
+      <?php wp_nav_menu( array( 'menu' => 'mega-menu', 'walker' => new nav_walker() ) ); ?>
     </div>
   </nav>
   <div class="wrapper">
@@ -39,7 +40,7 @@
         </div>
         <nav class="nav-triggers">
           <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
-          <?php wp_nav_menu( array( 'menu' => 'top-nav' ) ); ?>
+          <?php wp_nav_menu( array( 'menu' => 'top-nav', 'walker' => new nav_walker() ) ); ?>
         </nav>
       </div>
     </div>

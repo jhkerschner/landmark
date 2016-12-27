@@ -58,3 +58,25 @@ function add_async_attribute($tag, $handle) {
    endforeach;
    return $tag;
 }
+
+/**
+* Determine if a link is part of the site or not. 
+**/
+function is_site_link($target_url) {
+  $search = array('http://','https://');
+  $replace = array('','');
+
+  $site_url = get_site_url(); 
+  $site_url = parse_url($site_url);
+  $target_url = parse_url($target_url);
+
+  if($target_url['host'] != $site_url['host']) :
+    return false;
+  else :
+    return true;
+  endif;
+}
+
+function get_domain() {
+  return preg_replace("/^(.*\.)?([^.]*\..*)$/", "$2", $_SERVER['HTTP_HOST']);
+}

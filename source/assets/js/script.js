@@ -41,6 +41,16 @@ MainNav = {
   }
 };
 
+$('a').click(function(){
+  category = $(this).attr('data-event-category');
+  if(typeof category !== typeof undefined && category !== false) {
+    action = $(this).attr('data-event-action');
+    label = $(this).attr('data-event-label');
+    ga('send', 'event', category, action, label);
+  }
+
+});
+
 function initMap() {
   var center = {lat: 43.047249,lng: -76.152935}
   // Create a map object and specify the DOM element for display.
