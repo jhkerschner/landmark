@@ -4,7 +4,8 @@
 
 //defined in mixins partials
 #{$all-text-inputs}{
-  
+  border:  1px solid $brown !important;
+  height: 24px !important;
 }
 
 textarea {}
