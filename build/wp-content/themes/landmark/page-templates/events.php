@@ -14,12 +14,24 @@ get_header();
 			$events = get_landmark_events();
 			foreach($events as $event) :
 				$event_date = process_event_dates($event['dates']);
+				$time = process_event_times($event['start_times'], $event['end_times'], $event['multiple_times']);
 			?>
 				<div class="event">
 					<img class="event-image" src="<?php echo $event['image']; ?>">
 					<div class="event-info">
 						<h2 class="event-title"><?php echo $event['title']; ?></h2>
-						<p class="event-date"><?php echo $event_date; ?></p>
+						<?php if($time != '') :?>
+							<div class="event-time">
+								<?php if($time['multiple_time'] && $time['time'] != '') : ?>
+									<p class="event-date"><?php echo $event_date; ?></p>
+									<?php echo  $time['time']; ?>
+								<?php elseif(!$time['multiple_time'] && $time['time'] != '') : ?>
+									<p class="event-date"><?php echo $event_date; ?> &ndash; <?php echo $time['time']; ?></p>
+								<?php else: ?>
+									<p class="event-date"><?php echo $event_date; ?></p>
+								<?php endif; ?>
+							</div>
+						<?php endif; ?>
 						<?php echo $event['description']; //already has <p> tags ?>
 						<?php if($event['ticket_link'] != '') : ?>
 							<a class="cta-button" href="<?php echo $event['ticket_link']; ?>" target="_blank">Tickets</a>

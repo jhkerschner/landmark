@@ -5,7 +5,7 @@ function get_landmark_events() {
 	$json = file_get_contents('https://cnyarts.org/api/eventsearch?t='.$token.'&ds='.$start_date);
 
 	$events = json_decode($json,true);
-	
+
 	$grouped_events = array();
 	foreach($events as $event) :
 		if(!array_key_exists($event['id'], $grouped_events)) :
@@ -14,10 +14,17 @@ function get_landmark_events() {
 				'description' => $event['description'],
 				'image' => str_replace('http://','https://',$event['main_image']),
 				'ticket_link' => $event['ticket_link'],
-				'dates' => array($event['event_date'])
+				'dates' => array($event['event_date']),
+				'start_times' => array($event['start_time']),
+				'end_times' => array($event['end_time']),
+				'multiple_times' => array($event['multiple_times'])
+
 				);
 		elseif(array_key_exists($event['id'], $grouped_events)):
 			$grouped_events[$event['id']]['dates'][] = $event['event_date'];
+			$grouped_events[$event['id']]['start_times'][] = $event['start_time'];
+			$grouped_events[$event['id']]['end_times'][] = $event['end_time'];
+			$grouped_events[$event['id']]['multiple_times'][] = $event['multiple_times'];
 		else :
 			//nothing to do
 		endif;
@@ -77,4 +84,41 @@ function process_event_dates($dates) {
 	endif;
 
 	return $event_date;
+}
+
+function process_event_times($start, $end, $multiple) {
+	$start_times = array_unique($start);
+	$end_times = array_unique($end);
+	$multiple = array_unique($multiple);
+	$time_str = '';
+	$multiple_time = false;
+
+	if(!empty($start_times) && !in_array('00:00:00', $start_times)):
+		$s_time = new DateTime($start_times[0]);
+		$time_str .= $s_time->format('g:i a');
+
+		//check for an end time and add it if we have it.
+		if(!empty($end_times) && !in_array('00:00:00', $end_times)) :
+			$e_time = new DateTime($end_times[0]);
+			$time_str .= ' &ndash; '.$e_time;
+		endif;
+
+	elseif(!empty($multiple)):
+		$multiple_time = true;
+		$time_str .= '<ul>';
+		$multiple = preg_replace('~[\r\n]+~', ',', $multiple[0]);
+		if($multiple !== '') :
+			$multiple = explode(',',$multiple);
+				foreach($multiple as $t) :
+					//$time = preg_replace('~[\r\n]+~', '', $t);
+					$time_str .= '<li>'.$t.'</li>';
+				endforeach;
+			$time_str .= '</ul>';
+		endif;
+	else:
+		$time_str .= '';
+	endif;
+
+	return array('multiple_time'=>$multiple_time, 'time'=>$time_str);
+
 }
