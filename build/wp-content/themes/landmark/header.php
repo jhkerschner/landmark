@@ -3,6 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<!-- <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8eb006c2-5ddf-4201-aa96-90ae61355104.css"/> -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <?php wp_head(); ?>
 <?php get_template_part('template-parts/tp-google-analytics'); ?>

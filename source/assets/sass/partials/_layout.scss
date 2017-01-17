@@ -120,6 +120,9 @@ svg {
     margin: 0;
     padding: 0;
   }
+  .sub-menu-item {
+    @include fontLight;
+  }
 }
 .mega-nav-close {
   color: $redLight;
@@ -376,6 +379,7 @@ svg {
   li{
     display: inline-block;
     list-style-type: none;
+    @include fontMedium;
 
     
     @include breakpoint(860px){
@@ -648,6 +652,7 @@ svg {
   background-color: $goldLight;
 }
 .footer-map-title {
+  @include fontBold;
   color: $brown;
   font-size: 1.8125rem;
   text-transform: uppercase;

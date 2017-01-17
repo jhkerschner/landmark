@@ -1,13 +1,33 @@
+@mixin fontLight {
+  font-family:Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+@mixin fontMedium {
+  font-family:Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+@mixin fontBold {
+  font-family:Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
 html {
   font-size: $baseFontSize + px;
-  font-family: Arial, sans-serif;
+  @include fontLight;
   line-height: 1.5;
   color: $text;
+}
+
+h4,
+h5,
+h6, {
+  @include fontBold;
 }
 
 h1 {
   margin: 0 0 0.4em;
   font-size: 3.75rem;
+  @include fontLight;
   color: $brown;
   line-height: 1.24em;
 }
@@ -15,12 +35,14 @@ h1 {
 h2 {
   font-size: 2.25rem;
   margin: 0 0 1.24rem;
+  @include fontLight;
   color: $brown;
   line-height: 1.24em;
 }
 
 h3 {
   font-size: 1.9rem;
+  @include fontMedium;
   color: $brown;
   margin: 0 0 1.24rem;
   line-height: 1.24em;
