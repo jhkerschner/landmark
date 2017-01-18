@@ -21,8 +21,17 @@
         <div class="home-slider">
           <img class="header-mask" src="<?php echo get_bloginfo('template_url').'/assets/images/header-mask.png'; ?>" alt="">
           <ul class="bxslider">
-            <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt=""></li>
-            <li><img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-1.jpg'; ?>" alt=""></li>
+            <li>
+              <div class="slide-content-wrapper">
+                <div class="slide-content">
+                  <p class="date">OCTOBER 8, 2016 - 8:00PM</p>
+                  <h2>ZOMBIE BALL</h2>
+                  <h3>Party Like it's your last night among the living</h3>
+                  <a href="" class="cta-button">Learn more</a>
+                </div>
+                <img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt="">
+              </div>
+            </li>
           </ul>
           <div class="controls">
             <div id="bx-next" class="slider-control slider-control-right"><?php include (get_template_directory().'/assets/images/arrow-right.svg'); ?></div>
