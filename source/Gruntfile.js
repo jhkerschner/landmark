@@ -31,6 +31,7 @@ module.exports = function(grunt) {
             '<%= sourceRoot %>/js/script.js'
           ],
           '<%= buildRoot %>/js/ie-polys.js': [
+            '<%= sourceRoot %>/js/pointer-events-polyfill.js',
             '<%= sourceRoot %>/js/html5shiv.min.js',
             '<%= sourceRoot %>/js/respond.min.js',
           ],
@@ -45,6 +46,7 @@ module.exports = function(grunt) {
             '<%= sourceRoot %>/js/script.js'
           ],
           '<%= buildRoot %>/js/ie-polys.js': [
+            '<%= sourceRoot %>/js/pointer-events-polyfill.js',
             '<%= sourceRoot %>/js/html5shiv.min.js',
             '<%= sourceRoot %>/js/respond.min.js',
           ],

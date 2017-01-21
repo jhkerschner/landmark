@@ -1,4 +1,41 @@
-!function(a, b) {
+function PointerEventsPolyfill(options) {
+    if (this.options = {
+        selector: "*",
+        mouseEvents: [ "click", "dblclick", "mousedown", "mouseup" ],
+        usePolyfillIf: function() {
+            if ("Microsoft Internet Explorer" == navigator.appName) {
+                var agent = navigator.userAgent;
+                if (null != agent.match(/MSIE ([0-9]{1,}[\.0-9]{0,})/)) {
+                    var version = parseFloat(RegExp.$1);
+                    if (version < 11) return !0;
+                }
+            }
+            return !1;
+        }
+    }, options) {
+        var obj = this;
+        $.each(options, function(k, v) {
+            obj.options[k] = v;
+        });
+    }
+    this.options.usePolyfillIf() && this.register_mouse_events();
+}
+
+PointerEventsPolyfill.initialize = function(options) {
+    return null == PointerEventsPolyfill.singleton && (PointerEventsPolyfill.singleton = new PointerEventsPolyfill(options)), 
+    PointerEventsPolyfill.singleton;
+}, PointerEventsPolyfill.prototype.register_mouse_events = function() {
+    $(document).on(this.options.mouseEvents.join(" "), this.options.selector, function(e) {
+        if ("none" == $(this).css("pointer-events")) {
+            var origDisplayAttribute = $(this).css("display");
+            $(this).css("display", "none");
+            var underneathElem = document.elementFromPoint(e.clientX, e.clientY);
+            return origDisplayAttribute ? $(this).css("display", origDisplayAttribute) : $(this).css("display", ""), 
+            e.target = underneathElem, $(underneathElem).trigger(e), !1;
+        }
+        return !0;
+    });
+}, !function(a, b) {
     function c(a, b) {
         var c = a.createElement("p"), d = a.getElementsByTagName("head")[0] || a.documentElement;
         return c.innerHTML = "x<style>" + b + "</style>", d.insertBefore(c.lastChild, d.firstChild);

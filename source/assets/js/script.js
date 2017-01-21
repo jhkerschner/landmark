@@ -1,6 +1,7 @@
 
 $(function(){
   MainNav.init();
+  PointerEventsPolyfill.initialize({});
   $('.bxslider').bxSlider({
     nextSelector: '#bx-next',
     prevSelector: '#bx-prev',

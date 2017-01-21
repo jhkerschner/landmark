@@ -3,12 +3,19 @@
 // ----------------------------------------------------------
 
 html, body {
-  background-color: $goldLight;
   padding: 0;
+  background-image: url('assets/images/landmark_pattern_tile.gif');
+  background-color: $goldLight;
 }
 
 svg {
   width: 100%;
+}
+
+.site-wrapper {
+  background-color: $goldLight;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .body {
@@ -307,9 +314,6 @@ svg {
   top: -1px;
 }
 
-.bxslider li {
-  position: reltaive;
-}
 .slide-content-wrapper {
   position: relative;
   width: 100%;
@@ -382,7 +386,6 @@ svg {
     }
   }
   h3 {
-    @include fontMedium;
     text-transform: uppercase;
     color: $white;
     font-size: 1rem;
@@ -401,7 +404,7 @@ svg {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  pointer-events: none;
 }
 
 .header-logo-col {
@@ -469,7 +472,7 @@ svg {
   li{
     display: inline-block;
     list-style-type: none;
-    @include fontMedium;
+    @include fontLight;
 
     
     @include breakpoint(860px){
