@@ -31,8 +31,21 @@ function landmark_load_scripts()
 	//load our own jQuery
 	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), '3.1.1', true);
 
-	//load custom scripts
-	wp_enqueue_script( 'landmark-js', get_template_directory_uri() . '/assets/js/script.min.js', array(), filemtime(get_template_directory() . '/assets/js/script.min.js'), true );
+  if(is_page_template('page-templates/gallery.php')) :
+    wp_enqueue_style( 'fancybox-styles', get_template_directory_uri() . '/assets/css/fancybox.min.css',false,'1.1','all');
+    wp_enqueue_script( 'fancybox-js', get_template_directory_uri() . '/assets/js/jquery.fancybox.pack.js', array(), filemtime(get_template_directory() . '/assets/js/jquery.fancybox.pack.js'), true );
+  endif;
+
+  //load custom scripts
+  wp_enqueue_script( 'landmark-js', get_template_directory_uri() . '/assets/js/script.min.js', array(), filemtime(get_template_directory() . '/assets/js/script.min.js'), true );
+
+  if(is_page_template('page-templates/gallery.php')) :
+    $gallery_vars = array(
+      'next' => file_get_contents(get_template_directory().'/assets/images/arrow-right.svg'),
+      'prev' => file_get_contents(get_template_directory().'/assets/images/arrow-left.svg')
+    );
+  wp_localize_script( 'landmark-js', 'galleryArrows', $gallery_vars );
+  endif;
 
   wp_enqueue_script( 'ie-polys', get_template_directory_uri() . '/assets/js/ie-polys.js', array(), filemtime(get_template_directory() . '/assets/js/ie-polys.js'), true );
 

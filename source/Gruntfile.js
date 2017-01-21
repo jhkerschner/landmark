@@ -57,7 +57,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          '<%= cssDest %>/style.css' : '<%= sourceRoot %>/sass/style.scss'
+          '<%= cssDest %>/style.css' : '<%= sourceRoot %>/sass/style.scss',
+          '<%= cssDest %>/assets/css/fancybox.min.css' : '<%= sourceRoot %>/sass/fancybox.scss'
         }
       }
     },
