@@ -3,7 +3,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<!-- <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8eb006c2-5ddf-4201-aa96-90ae61355104.css"/> -->
+<script src="https://use.typekit.net/buw2zfy.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <?php wp_head(); ?>
 <?php get_template_part('template-parts/tp-google-analytics'); ?>
@@ -18,26 +19,7 @@
   <div class="wrapper">
     <div class="header">
       <?php if (is_front_page()) : ?>
-        <div class="home-slider">
-          <img class="header-mask" src="<?php echo get_bloginfo('template_url').'/assets/images/header-mask.png'; ?>" alt="">
-          <ul class="bxslider">
-            <li>
-              <div class="slide-content-wrapper">
-                <div class="slide-content">
-                  <p class="date">OCTOBER 8, 2016 - 8:00PM</p>
-                  <h2>ZOMBIE BALL</h2>
-                  <h3>Party Like it's your last night among the living</h3>
-                  <a href="" class="cta-button">Learn more</a>
-                </div>
-                <img class="slide" src="<?php echo get_bloginfo('template_url').'/assets/images/slide-2.jpg'; ?>" alt="">
-              </div>
-            </li>
-          </ul>
-          <div class="controls">
-            <div id="bx-next" class="slider-control slider-control-right"><?php include (get_template_directory().'/assets/images/arrow-right.svg'); ?></div>
-            <div id="bx-prev" class="slider-control slider-control-left"><?php include (get_template_directory().'/assets/images/arrow-left.svg'); ?></div>
-          </div>
-        </div>
+        <?php get_template_part('template-parts/tp-home-slider'); ?>
       <? else: ?>
         <div class="subpage-banner">
           <img src="<?php echo get_bloginfo('template_url').'/assets/images/subpage-banner.jpg'; ?>" alt="">
