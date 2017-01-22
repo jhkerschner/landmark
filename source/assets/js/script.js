@@ -15,7 +15,7 @@ $(function(){
       $('.bx-next')[0].appendChild($('.slider-control-right svg')[0])
     }
   });
-
+  
   if($('.page-template-gallery').length) {
     $(".fancybox").fancybox({
       nextEffect: 'none',
