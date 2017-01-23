@@ -8,11 +8,12 @@ get_header(); ?>
     <div class="left-col">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
+        <div class="wysiwyg"><?php the_content(); ?></div>
         <?php
         if(have_rows('team')) : 
           while(have_rows('team')) : the_row(); ?>
             <div class="person">
-              <p class="name"><?php the_sub_field('name'); ?></p>
+              <p class="name"><?phvp the_sub_field('name'); ?></p>
               <p class="title"><?php the_sub_field('title'); ?></p>
               <div class="wysiwyg">
                 <?php the_sub_field('bio'); ?>
