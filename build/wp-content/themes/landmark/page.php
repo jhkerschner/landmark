@@ -9,7 +9,7 @@
       <?php endwhile; endif; ?>
     </div>
     <div class="right-col">
-      <?php get_sidebar(); ?>
+      <?php get_template_part('template-parts/tp-cta'); ?>
     </div>
   </div>
 </div>

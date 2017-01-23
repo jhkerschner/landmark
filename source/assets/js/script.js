@@ -15,6 +15,18 @@ $(function(){
       $('.bx-next')[0].appendChild($('.slider-control-right svg')[0])
     }
   });
+  
+  if($('.page-template-gallery').length) {
+    $(".fancybox").fancybox({
+      nextEffect: 'none',
+      prevEffect: 'none',
+      tpl: {
+        /*closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>',*/
+        next     : '<a title="Next" class="fancybox-nav fancybox-next slider-control slider-control-left" href="javascript:;">'+galleryArrows.next+'</a>',
+        prev     : '<a title="Previous" class="fancybox-nav fancybox-prev slider-control slider-control-right" href="javascript:;">'+galleryArrows.prev+'</a>'
+      }
+    });
+  }
 });
 
 MainNav = {
