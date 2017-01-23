@@ -9,7 +9,9 @@ get_header();
 
 
 <?php 
-if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<div class="wysiwyg"><?php the_content(); ?></div>
+<?php
 	$images = get_field('photos');
 
 	foreach( $images as $image ) : ?>
