@@ -13,7 +13,7 @@ get_header(); ?>
         if(have_rows('team')) : 
           while(have_rows('team')) : the_row(); ?>
             <div class="person">
-              <p class="name"><?phvp the_sub_field('name'); ?></p>
+              <p class="name"><?php the_sub_field('name'); ?></p>
               <p class="title"><?php the_sub_field('title'); ?></p>
               <div class="wysiwyg">
                 <?php the_sub_field('bio'); ?>
