@@ -716,6 +716,27 @@ svg {
   right: -50px !important;
 }
 
+// ----------------------------------------------------------
+// people
+// ----------------------------------------------------------
+.people {
+  padding: 2rem 0 0 0;
+}
+.person {
+  margin: 0 0 3rem;
+  padding: 1rem 0 0;
+  border-top: 4px solid $gold;
+
+  .name {
+    @include fontBold;
+    margin: 0 0 0.4em;
+    line-height: 1.1em;
+  }
+  .title {
+    @include fontBold;
+    font-style: italic;
+  }
+}
 
 // ----------------------------------------------------------
 // Woocommerce overides
