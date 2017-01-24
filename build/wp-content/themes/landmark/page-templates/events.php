@@ -32,10 +32,12 @@ get_header();
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
-						<?php echo $event['description']; //already has <p> tags ?>
 						<?php if($event['ticket_link'] != '') : ?>
 							<a class="cta-button" href="<?php echo $event['ticket_link']; ?>" target="_blank">Tickets</a>
 						<?php endif; ?>
+					</div>
+					<div class="event-description">
+						<?php echo $event['description']; //already has <p> tags ?>
 					</div>
 				</div>
 			<?php endforeach; ?>

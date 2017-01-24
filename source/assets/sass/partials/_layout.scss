@@ -250,6 +250,35 @@ svg {
   width:100%;
   max-width: 1200px;
 
+  .buy-tickets {
+    display: none;
+    position: absolute;
+    top:0;
+    right:0;
+    width: 199px;
+    height: 116px;
+    background: url('assets/images/buy-tickets-now.png') no-repeat;
+
+    a {
+      display: block;
+      width: 199px;
+      height: 116px;
+      text-indent: -9999px;
+      transition: opacity $transition;
+      &:link, &:visited{
+        opacity: 0;
+        background-image: url('assets/images/buy-tickets-over.png');
+      }
+      &:hover, &:active{
+        opacity: 1;
+      }
+    }
+
+    @media screen and (min-width: 860px) {
+      display: block;
+    }
+  }
+
   @include breakpoint(370px){
     padding: 0.5rem 1.5rem 0 2rem;
   }
@@ -343,7 +372,7 @@ svg {
   }
 
   @include breakpoint(720px){
-    right: 293px;
+    right: 333px;
   }
 
   @include breakpoint(860px){
@@ -351,7 +380,7 @@ svg {
   }
 
   @include breakpoint($desktop){
-    max-width: 1200px;
+    max-width: 640px;
     top:34%;
   }
   @include breakpoint($widescreen){
@@ -375,6 +404,7 @@ svg {
     text-transform: uppercase;
     color: $white;
     font-size: 2rem;
+    line-height: 1;
     margin: 0;
 
     @include breakpoint($desktop){
@@ -536,11 +566,18 @@ svg {
   padding: 1.625rem 2.1875rem;
   margin: 0 0 2rem;
 
-  @include breakpoint($tablet){
-    @include span(4 of 12);
+  
+}
 
-    &:nth-child(3n) {
-      @include span(last 4 of 12);
+.home-features {
+  .cta {
+
+    @include breakpoint($tablet){
+      @include span(4 of 12);
+
+      &:nth-child(3n) {
+        @include span(last 4 of 12);
+      }
     }
   }
 }
@@ -597,24 +634,32 @@ svg {
 .event {
   @include container;
   margin: 0 0 3rem;
+  padding: 1rem 0 0;
+  border-top: 4px solid $gold;
 }
 .event-image {
-  max-width: 300px;
-  margin: 0.4rem 0 1.24rem;
+  margin: 0.4rem 0 1rem;
   @include breakpoint($tablet){
-    @include span(first 4 of 12);
+    @include span(first 4 of 8);
   }
 }
 .event-info {
+  margin-bottom: 1rem;
   @include breakpoint($tablet){
-    @include span(last 8 of 12);
+    @include span(last 4 of 8);
   }
 }
 .event-title {
+  @include fontBold;
   margin: 0 0 0.4em;
+  line-height: 1.1em;
 }
 .event-date {
+  @include fontBold;
   font-style: italic;
+}
+.event-description {
+  clear: both;
 }
 
 
