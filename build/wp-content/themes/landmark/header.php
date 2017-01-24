@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 <script src="https://use.typekit.net/buw2zfy.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <?php wp_head(); ?>
 <?php get_template_part('template-parts/tp-google-analytics'); ?>
