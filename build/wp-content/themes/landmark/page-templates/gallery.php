@@ -6,23 +6,22 @@ Template Name: Gallery
 get_header();
 ?>
 
-
-
-<?php 
-if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="wysiwyg"><?php the_content(); ?></div>
-<?php
-	$images = get_field('photos');
-
-	foreach( $images as $image ) : ?>
-        <div style="width: 300px; height: 300px;">
-            <a href="<?php echo $image['url']; ?>" class="fancybox" rel="group">
-                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-            </a>
+<div class="container">
+  <?php 
+  if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  	<div class="wysiwyg"><?php the_content(); ?></div>
+    <div class="gallery">
+      <?php $images = get_field('photos'); foreach( $images as $image ) : ?>
+        <div class="gallery-image" style="background-image: url('<?php echo $image['url']; ?>')">
+          <a href="<?php echo $image['url']; ?>" class="fancybox" rel="group">
+          </a>
         </div>
-    <?php endforeach; ?>
+      <?php endforeach; ?>
+    </div>
 
-<?php endwhile; endif; ?>
+  <?php endwhile; endif; ?>
+</div>
+
 
 
 <?php get_footer(); ?>

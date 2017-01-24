@@ -20,8 +20,10 @@ $(function(){
     $(".fancybox").fancybox({
       nextEffect: 'none',
       prevEffect: 'none',
+      margin: 50,
+      showCloseButton: false,
       tpl: {
-        /*closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>',*/
+        closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;" style="display: none;"></a>',
         next     : '<a title="Next" class="fancybox-nav fancybox-next slider-control slider-control-left" href="javascript:;">'+galleryArrows.next+'</a>',
         prev     : '<a title="Previous" class="fancybox-nav fancybox-prev slider-control slider-control-right" href="javascript:;">'+galleryArrows.prev+'</a>'
       }
