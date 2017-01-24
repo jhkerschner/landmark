@@ -36,7 +36,7 @@
             <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
             <?php wp_nav_menu( array( 'menu' => 'top-nav', 'walker' => new nav_walker() ) ); ?>
           </nav>
-          <div class="buy-tickets"><a href="<?php echo esc_url( home_url( '/box-office' ) ); ?>" class="buy-tickets">Buy Tickets</a></div>
+          <div class="buy-tickets"><a href="<?php the_field('buy_tickets_now','option'); ?>" target="_blank" class="buy-tickets">Buy Tickets</a></div>
         </div>
       </div>
       <div class="body">
