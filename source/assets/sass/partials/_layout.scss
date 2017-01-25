@@ -16,6 +16,7 @@ svg {
   background-color: $goldLight;
   max-width: 1400px;
   margin: 0 auto;
+  box-shadow: 0 0 30px 20px rgba(0,0,0,0.1);
 }
 
 .body {
@@ -154,10 +155,6 @@ svg {
   }
 }
 
-.wrapper {
-  box-shadow: 0px 60px 160px 80px rgba(0,0,0,0.3);
-}
-
 .header{
   overflow: hidden;
   @include clearfix;
@@ -215,7 +212,7 @@ svg {
 }
 .controls{
   position: absolute;
-  top: 50%;
+  top: 59%;
   z-index: 2;
   width: 100%;
 }
@@ -355,73 +352,74 @@ svg {
   right: 172px;
   text-align: right;
   text-transform: uppercase;
+  font-size: 9px;
 
   @include breakpoint(370px){
     top: 160px;
     right: 282px;
+    font-size: 9px;
   }
 
   @include breakpoint(513px){
     top: 210px;
     right: 307px;
+    font-size: 10px;
   }
 
   @include breakpoint(640px){
     top: 225px;
     right: 260px;
+    font-size: 12px;
   }
 
   @include breakpoint(720px){
     right: 333px;
+    font-size: 14px;
   }
 
   @include breakpoint(860px){
     right: 80px;
+    font-size: 15px;
   }
 
   @include breakpoint($desktop){
     max-width: 640px;
     top:34%;
+    font-size: 16px;
   }
   @include breakpoint($widescreen){
     right: 7.4rem;
   }
 
   p {
-    font-size: .8rem;
-    margin: 0 0 .4rem;
     text-transform: uppercase;
     @include fontBold;
     color: $white;
     text-shadow: 0 0 44px rgba(0, 0, 0, 0.6);
+    font-size: 1.25em;
+    margin: 0 0 1em;
 
     @include breakpoint($desktop){
-      font-size: 1.25rem;
-      margin: 0 0 1rem;
     }
   }
   h2 {
     @include fontBold;
     text-transform: uppercase;
     color: $white;
-    font-size: 2rem;
     line-height: 1;
-    margin: 0;
     text-shadow: 0 0 34px rgba(0, 0, 0, 0.3);
+    font-size: 5.625em;
+    margin: 0;
 
-    @include breakpoint($desktop){
-      font-size: 5.625rem;
-      margin: 0;
-    }
   }
   h3 {
     text-transform: uppercase;
     color: $white;
-    font-size: 1rem;
-    text-shadow: 0 0 34px rgba(0, 0, 0, 0.2);
+    @include fontLight;
+    text-shadow: 0 0 34px rgba(0, 0, 0, 0.8);
+    font-size: 2.8125em;
 
     @include breakpoint($desktop){
-      font-size: 2.8125rem;
     }
   }
   .cta-button {
@@ -602,6 +600,7 @@ svg {
   height: 24px;
   padding: 0.2rem 1.7rem .3rem .56rem;
   position: relative;
+  text-transform: uppercase;
 
   &:link, &:visited{
     color: $white;
@@ -654,12 +653,13 @@ svg {
 }
 .event-title {
   @include fontBold;
-  margin: 0 0 0.4em;
+  margin: 0 0 0.3em;
   line-height: 1.1em;
 }
 .event-date {
   @include fontBold;
   font-style: italic;
+  margin: 0 0 1rem;
 }
 .event-description {
   clear: both;
@@ -675,7 +675,7 @@ svg {
 .gallery-image {
   margin: 0 0 1rem;
   height: 0;
-  padding-top: 20%;
+  padding-top: 32.2%;
   overflow: hidden;
   background-size: cover;
   position: relative;
@@ -687,6 +687,39 @@ svg {
     display: block;
     width: 100%;
     height: 100%;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 92%;
+      height: 92%;
+      margin: 4%;
+      background-color: rgba($brown,.0);
+      transition: background $transition;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 57px;
+      height: 57px;
+      background: url('assets/images/expand-arrows.png') no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -28.5px 0 0 -28.5px;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+
+    &:hover, &:active{
+      &:before {
+        background-color: rgba($brown,.6)
+      }
+      &:after {
+        opacity: 1;
+      }
+    }
   }
 
   @media screen and (min-width: $tablet) {
@@ -732,12 +765,13 @@ svg {
 
   .name {
     @include fontBold;
-    margin: 0 0 0.4em;
+    margin: 0 0 0.2em;
     line-height: 1.1em;
   }
   .title {
     @include fontBold;
     font-style: italic;
+    margin: 0 0 1rem 0;
   }
 }
 // ----------------------------------------------------------
