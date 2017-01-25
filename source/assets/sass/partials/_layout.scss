@@ -393,6 +393,7 @@ svg {
     text-transform: uppercase;
     @include fontBold;
     color: $white;
+    text-shadow: 0 0 44px rgba(0, 0, 0, 0.6);
 
     @include breakpoint($desktop){
       font-size: 1.25rem;
@@ -406,6 +407,7 @@ svg {
     font-size: 2rem;
     line-height: 1;
     margin: 0;
+    text-shadow: 0 0 34px rgba(0, 0, 0, 0.3);
 
     @include breakpoint($desktop){
       font-size: 5.625rem;
@@ -416,6 +418,7 @@ svg {
     text-transform: uppercase;
     color: $white;
     font-size: 1rem;
+    text-shadow: 0 0 34px rgba(0, 0, 0, 0.2);
 
     @include breakpoint($desktop){
       font-size: 2.8125rem;
@@ -735,6 +738,42 @@ svg {
   .title {
     @include fontBold;
     font-style: italic;
+  }
+}
+// ----------------------------------------------------------
+// membership
+// ----------------------------------------------------------
+.membership {
+  margin: 0 0 2rem;
+  img {
+    width: 100%;
+  }
+  .price {
+    display: inline-block;
+    padding: .2rem 1rem 0 0;
+    color: $red !important;
+    position: relative;
+    top: 2px;
+  }
+  h3 {
+    margin: 0 0 .4rem;
+  }
+  @media screen and (min-width: 480px) {
+    @include span(6 of 12);
+
+    &:nth-child(2n) {
+      @include span(last 6 of 12);
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    @include span(4 of 12);
+
+    &:nth-child(2n) {
+      @include span(4 of 12);
+    }
+    &:nth-child(3n) {
+      @include span(last 4 of 12);
+    }
   }
 }
 
