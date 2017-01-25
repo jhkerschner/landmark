@@ -83,22 +83,45 @@ svg {
     margin-bottom: 2rem;
     a {
       &:link, &:visited{
-        color: $redLight;
+        color: $white;
       }
       &:hover, &:active{
-        color: $redLight;
+        color: $white;
         text-decoration: underline;
       }
     }
-    &.focused {
+    @media screen and (min-width: 860px) {
       a {
         &:link, &:visited{
-          color: $white;
+          color: $redLight;
         }
         &:hover, &:active{
-          color: $white;
+          color: $redLight;
           text-decoration: underline;
         }
+      }
+      &.focused {
+        a {
+          &:link, &:visited{
+            color: $white;
+          }
+          &:hover, &:active{
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+        a.main-menu-link {
+          cursor: default;
+          &:hover, &:active{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    a.main-menu-link {
+      cursor: default;
+      &:hover, &:active{
+        text-decoration: none;
       }
     }
     

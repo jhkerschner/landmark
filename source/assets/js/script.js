@@ -53,6 +53,9 @@ MainNav = {
       $('.mega-nav').addClass('open');
       $('#menu-top-nav').removeClass('visible');
     })
+    $('.main-menu-link').on('click touch', function(e){
+      e.preventDefault();
+    })
   }
 };
 
