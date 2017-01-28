@@ -62,4 +62,43 @@ function create_post_types() {
 	);
 
 	register_post_type( 'ctas', $ctas_args );
+
+	$team_labels = array(
+		'name'               => __( 'Team Members' ),
+		'singular_name'      => __( 'Team Memeber' ),
+		'menu_name'          => __( 'Team' ),
+		'add_new'            => __( 'Add Team Member'),
+		'add_new_item'       => __( 'Add New Team Memeber' ),
+		'new_item'           => __( 'New Team Memeber' ),
+		'edit_item'          => __( 'Edit Team Memeber' ),
+		'view_item'          => __( 'View Team Memeber' ),
+		'all_items'          => __( 'All Team Memebers' ),
+		'search_items'       => __( 'Search Team Memebers' ),
+		'not_found'          => __( 'No Team Memebers found.' ),
+		'not_found_in_trash' => __( 'No Team Memebers found in Trash.' )
+	);
+
+	$team_args = array(
+		'labels'             => $team_labels,
+		'public'             => true,
+		'publicly_queryable' => false,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => false,
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title' )
+	);
+
+	register_post_type( 'team', $team_args );
+
+	$team_tax_args = array(
+		'hierarchical'          => true,
+		'show_ui'               => true,
+		'show_admin_column'     => true
+	);
+
+	register_taxonomy( 'team_categories', 'team', $team_tax_args );
 }

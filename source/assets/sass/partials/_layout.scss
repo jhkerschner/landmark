@@ -786,15 +786,19 @@ svg {
   padding: 1rem 0 0;
   border-top: 4px solid $gold;
 
-  .name {
+  .name,
+  .company,
+  .email,
+  .phone {
     @include fontBold;
     margin: 0 0 0.2em;
     line-height: 1.1em;
   }
-  .title {
+  .title, 
+  {
     @include fontBold;
     font-style: italic;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.2em;
   }
 }
 // ----------------------------------------------------------

@@ -12,35 +12,42 @@ get_header(); ?>
         <div class="wysiwyg"><?php the_field('team_copy'); ?></div>
         <div class="people">
           <?php
-          if(have_rows('team')) : 
-            while(have_rows('team')) : the_row(); ?>
-              <div class="person">
-                <h2 class="name"><?php the_sub_field('name'); ?></h2>
-                <p class="title"><?php the_sub_field('title'); ?></p>
-                <div class="wysiwyg">
-                  <?php the_sub_field('bio'); ?>
-                </div>
-              </div>
-          <?php endwhile; endif; ?>
+          if(have_rows('staff', 'option')) : 
+            while(have_rows('staff', 'option')) : the_row(); 
+              get_template_part('template-parts/tp-team-member');
+            endwhile; endif; ?>
+        </div>
+
+        <div class="wysiwyg"><?php the_field('board_of_trustees_copy'); ?></div>
+        <div class="people">
+          <?php
+          if(have_rows('board_of_trustees', 'option')) : 
+            while(have_rows('board_of_trustees', 'option')) : the_row(); 
+              get_template_part('template-parts/tp-team-member');
+            endwhile; endif; ?>
+        </div>
+
+        <div class="wysiwyg"><?php the_field('general_board_copy'); ?></div>
+        <div class="people">
+          <?php
+          if(have_rows('general_board', 'option')) : 
+            while(have_rows('general_board', 'option')) : the_row(); 
+              get_template_part('template-parts/tp-team-member');
+            endwhile; endif; ?>
+        </div>
+
+        <div class="wysiwyg"><?php the_field('charter_trustees_copy'); ?></div>
+        <div class="people">
+          <?php
+          if(have_rows('charter_trustees', 'option')) : 
+            while(have_rows('charter_trustees', 'option')) : the_row(); 
+              get_template_part('template-parts/tp-team-member');
+          endwhile; endif; ?>
         </div>
 
         <div class="wysiwyg"><?php the_field('volunteer_copy'); ?></div>
 
-        <div class="wysiwyg"><?php the_field('board_of_directors_copy'); ?></div>
-        <div class="people">
-          <?php
-          if(have_rows('board_of_directors')) : 
-            while(have_rows('board_of_directors')) : the_row(); ?>
-              <div class="person">
-                <h2 class="name"><?php the_sub_field('name'); ?></h2>
-                <p class="title"><?php the_sub_field('title_on_board'); ?></p>
-                <p class="title"><?php the_sub_field('titlecurrent_company'); ?></p>
-                <div class="wysiwyg">
-                  <?php the_sub_field('short_description'); ?>
-                </div>
-              </div>
-          <?php endwhile; endif; ?>
-        </div>
+        <div class="wysiwyg"><?php the_field('additional_copy'); ?></div>
 
 
       <?php endwhile; endif; ?>
