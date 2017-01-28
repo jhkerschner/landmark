@@ -36,6 +36,10 @@ function landmark_load_scripts()
     wp_enqueue_script( 'fancybox-js', get_template_directory_uri() . '/assets/js/jquery.fancybox.pack.js', array(), filemtime(get_template_directory() . '/assets/js/jquery.fancybox.pack.js'), true );
   endif;
 
+  if(is_page('contact-us') || is_page('volunteer')) :
+    wp_enqueue_script( 'jquery-mask', get_template_directory_uri() . '/assets/js/jquery.mask.min.js', array(), filemtime(get_template_directory() . '/assets/js/jquery.mask.min.js'), true );
+  endif;
+
   //load custom scripts
   wp_enqueue_script( 'landmark-js', get_template_directory_uri() . '/assets/js/script.min.js', array(), filemtime(get_template_directory() . '/assets/js/script.min.js'), true );
 

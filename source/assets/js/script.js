@@ -29,6 +29,11 @@ $(function(){
       }
     });
   }
+
+  if($('.cf7-phone').length) {
+    $('.cf7-phone').mask('(000) 000-0000');
+  }
+
 });
 
 MainNav = {

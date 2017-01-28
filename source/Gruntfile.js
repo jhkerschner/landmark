@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     uglify: {
       dev: {
         options: {
-          beautify: true,
+          beautify: false,
           mangle: false
         },
         files: {
