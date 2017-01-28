@@ -12,11 +12,11 @@ get_header();
 			<h1>Events</h1>
 			<?php 
 			$events = get_landmark_events();
-			foreach($events as $event) :
+			foreach($events as $id=>$event) :
 				$event_date = process_event_dates($event['dates']);
 				$time = process_event_times($event['start_times'], $event['end_times'], $event['multiple_times']);
 			?>
-				<div class="event">
+				<div id="event-<?php echo $id; ?>" class="event">
 					<img class="event-image" src="<?php echo $event['image']; ?>">
 					<div class="event-info">
 						<h2 class="event-title"><?php echo $event['title']; ?></h2>

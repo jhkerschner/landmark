@@ -18,3 +18,15 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 }
+
+function acf_load_landmark_events( $field ) {
+    $field['choices'] = array();
+    $landmark_events = get_landmark_events();
+	foreach( $landmark_events as $id=>$event ) :
+	    $field['choices'][ $id ] = $event['title'];
+	endforeach;
+
+    return $field;
+}
+
+add_filter('acf/load_field/name=link_to_event', 'acf_load_landmark_events');
