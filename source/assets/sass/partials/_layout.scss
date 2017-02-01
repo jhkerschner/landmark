@@ -194,7 +194,7 @@ svg {
   position: relative;
   min-width: 650px;
   min-height: 353px;
-  margin-left: -174px;
+  margin-left: -250px;
 
   img{
     display: block;
@@ -205,13 +205,13 @@ svg {
   @include breakpoint(370px){
     min-width: 774px;
     min-height: 448px;
-    margin-left: -134px;
+    margin-left: -250px;
   }
 
   @include breakpoint(513px){
     min-width: 924px;
     min-height: 535px;
-    margin-left: -124px;
+    margin-left: -250px;
   }
 
   @include breakpoint(640px){
@@ -232,35 +232,30 @@ svg {
     margin-left:0;
   }
 
-}
-.controls{
-  position: absolute;
-  top: 59%;
-  z-index: 2;
-  width: 100%;
-}
-.slider-control{
-  opacity: .37;
-  cursor: pointer;
-  width: 24px;
+  .slider-control{
+    position: absolute;
+    top: 59%;
+    opacity: .37;
+    cursor: pointer;
+    width: 24px;
 
-  &:hover,&:active{
-    opacity: 1;
-    
-    path{
-      fill: $gold;
+    &:hover,&:active{
+      opacity: 1;
+      
+      path{
+        fill: $gold;
+      }
     }
   }
+  .slider-control-left{
+    left:0;
+    margin-left: 1rem;
+  }
+  .slider-control-right{
+    right: 0;
+    margin-right: 1rem;
+  }
 }
-.slider-control-left{
-  float: left;
-  margin-left: 1rem;
-}
-.slider-control-right{
-  float: right;
-  margin-right: 1rem;
-}
-
 .header-container {
   padding: 0.5rem 1.5rem 0 2rem;
   position: absolute;
@@ -372,41 +367,46 @@ svg {
 .slide-content {
   position: absolute;
   top: 111px;
-  right: 172px;
+  right: 94px;
   text-align: right;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 11px;
+  width: 320px;
 
   @include breakpoint(370px){
     top: 160px;
-    right: 282px;
-    font-size: 9px;
+    right: 172px;
+    font-size: 12px;
+    width: 370px;
   }
 
   @include breakpoint(513px){
     top: 210px;
-    right: 307px;
-    font-size: 10px;
+    right: 177px;
+    font-size: 13px;
+    width: 513px;
   }
 
   @include breakpoint(640px){
     top: 225px;
     right: 260px;
-    font-size: 12px;
+    font-size: 13px;
+    width: 640px;
   }
 
   @include breakpoint(720px){
     right: 333px;
     font-size: 14px;
+    width: 720px;
   }
 
   @include breakpoint(860px){
     right: 80px;
-    font-size: 15px;
+    font-size: 14px;
+    width: 100%;
   }
 
   @include breakpoint($desktop){
-    max-width: 640px;
     top:34%;
     font-size: 16px;
   }
@@ -421,9 +421,6 @@ svg {
     text-shadow: 0 0 44px rgba(0, 0, 0, 0.6);
     font-size: 1.25em;
     margin: 0 0 1em;
-
-    @include breakpoint($desktop){
-    }
   }
   h2 {
     @include fontBold;
@@ -431,18 +428,41 @@ svg {
     color: $white;
     line-height: 1;
     text-shadow: 0 0 34px rgba(0, 0, 0, 0.3);
-    font-size: 5.625em;
+    font-size: 3em;
     margin: 0;
+    
+    @include breakpoint(513px){
+      font-size: 3.5em;
+    }
 
+    @include breakpoint(640px){
+      font-size: 4em;
+    }
+
+    @include breakpoint($desktop){
+      font-size: 5.625em;
+    }
   }
   h3 {
     text-transform: uppercase;
     color: $white;
     @include fontLight;
     text-shadow: 0 0 34px rgba(0, 0, 0, 0.8);
-    font-size: 2.8125em;
+    font-size: 1em;
+
+    @include breakpoint(370px){
+      font-size: 1.4em;
+    }
+    @include breakpoint(513px){
+      font-size: 1.8em;
+    }
+
+    @include breakpoint(640px){
+      font-size: 2em;
+    }
 
     @include breakpoint($desktop){
+      font-size: 2.8125em;
     }
   }
   .cta-button {
@@ -661,6 +681,15 @@ svg {
   margin: 0 0 3rem;
   padding: 1rem 0 0;
   border-top: 4px solid $gold;
+
+  ul {
+    margin: 0 0 1rem;
+    padding: 0;
+    li {
+      font-style: italic;
+      list-style-type: none;
+    }
+  }
 }
 .event-image {
   margin: 0.4rem 0 1rem;
@@ -698,7 +727,7 @@ svg {
 .gallery-image {
   margin: 0 0 1rem;
   height: 0;
-  padding-top: 32.2%;
+  padding-top: 100%;
   overflow: hidden;
   background-size: cover;
   position: relative;
@@ -746,6 +775,7 @@ svg {
   }
 
   @media screen and (min-width: $tablet) {
+    padding-top: 49.1%;
     @include span(6 of 12);
 
     &:nth-child(2n) {
@@ -753,6 +783,7 @@ svg {
     }
   }
   @media screen and (min-width: $desktop) {
+    padding-top: 32.2%;
     @include span(4 of 12);
 
     &:nth-child(2n) {
@@ -767,6 +798,7 @@ svg {
 .fancybox-nav {
   width: 30px !important;
   top: 41% !important;
+  height: auto !important;
 }
 .fancybox-prev {
   left: -50px !important;
@@ -805,7 +837,9 @@ svg {
 // membership
 // ----------------------------------------------------------
 .membership {
-  margin: 0 0 2rem;
+  margin: 0 auto 2rem;
+  min-height: 320px;
+  max-width: 380px;
   img {
     width: 100%;
   }
@@ -815,18 +849,19 @@ svg {
     color: $red !important;
     position: relative;
     top: 2px;
+    line-height: 15px;
   }
   h3 {
     margin: 0 0 .4rem;
   }
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 550px) {
     @include span(6 of 12);
 
     &:nth-child(2n) {
       @include span(last 6 of 12);
     }
   }
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: 860px) {
     @include span(4 of 12);
 
     &:nth-child(2n) {
@@ -955,6 +990,13 @@ svg {
 }
 #add_payment_method .cart-collaterals .cart_totals tr td, #add_payment_method .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-checkout .cart-collaterals .cart_totals tr td, .woocommerce-checkout .cart-collaterals .cart_totals tr th {
   border-top: 1px solid rgba(0,0,0,0.3) !important;
+}
+
+.woocommerce-page table.cart td.actions .button {
+  margin-right: 0 !important;
+}
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+  margin-right: 0 !important;
 }
 // ----------------------------------------------------------
 // Footer Map
