@@ -4,7 +4,7 @@
       <footer class="site-footer">
         <div class="container">
           <div class="footer-left-col">
-            <a class="footer-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home" data-event-category="In-Page Nav" data-event-action="Nav Click" data-event-label="Footer Home Logo"><?php include (get_template_directory().'/assets/images/footer-logo.svg'); ?></a>
+            <a class="footer-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home" data-event-category="In-Page Nav" data-event-action="Nav Click" data-event-label="Footer Logo"><?php include (get_template_directory().'/assets/images/footer-logo.svg'); ?></a>
           </div>
           <div class="footer-right-col">
             <?php if(have_rows('social_media_links', 'option')) : ?>

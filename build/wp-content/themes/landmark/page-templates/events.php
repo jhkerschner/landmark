@@ -33,7 +33,7 @@ get_header();
 							</div>
 						<?php endif; ?>
 						<?php if($event['ticket_link'] != '') : ?>
-							<a class="cta-button" href="<?php echo $event['ticket_link']; ?>" target="_blank">Tickets</a>
+							<a class="cta-button" href="<?php echo $event['ticket_link']; ?>" target="_blank" data-event-category="External Link" data-event-action="Click" data-event-label="Events | <?php echo filter_var($event['title'], FILTER_SANITIZE_STRING); ?> | Tickets">Tickets</a>
 						<?php endif; ?>
 					</div>
 					<div class="event-description">

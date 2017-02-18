@@ -26,7 +26,7 @@
           if(get_field('include_cta', $slide_id) === 'Yes') : 
             $event_id = get_field('link_to_event', $slide_id);
           ?>
-          <a href="/events/calendar/#event-<?php echo $event_id; ?>"<?php echo $target; ?> class="cta-button"><?php the_field('button_text', $slide_id); ?></a>
+          <a href="/events/calendar/#event-<?php echo $event_id; ?>"<?php echo $target; ?> class="cta-button" data-event-category="In-Page Nav" data-event-action="Nav Click" data-event-label="Home Slider | <?php echo filter_var(get_field('slide_heading', $slide_id), FILTER_SANITIZE_STRING); ?> | <?php the_field('button_text', $slide_id); ?>"><?php the_field('button_text', $slide_id); ?></a>
           <?php endif; ?>
         </div>
         <img class="slide" src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>">

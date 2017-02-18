@@ -29,14 +29,14 @@
         <?php endif; ?>
         <div class="header-container">
           <div class="header-logo-col">
-            <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php include (get_template_directory().'/assets/images/header-logo.svg'); ?></a>
+            <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home" data-event-category="In-Page Nav" data-event-action="Nav Click" data-event-label="Header Logo"><?php include (get_template_directory().'/assets/images/header-logo.svg'); ?></a>
 
           </div>
           <nav class="nav-triggers">
             <a class="hamburger" role="button" id="open-mega-nav"><?php include (get_template_directory().'/assets/images/hamburger.svg'); ?></a>
             <?php wp_nav_menu( array( 'menu' => 'top-nav', 'walker' => new nav_walker() ) ); ?>
           </nav>
-          <div class="buy-tickets"><a href="<?php the_field('buy_tickets_now','option'); ?>" target="_blank" class="buy-tickets">Buy Tickets</a></div>
+          <div class="buy-tickets"><a href="<?php the_field('buy_tickets_now','option'); ?>" target="_blank" class="buy-tickets" data-event-category="CTA" data-event-action="Click" data-event-label="Buy Tickets Now">Buy Tickets</a></div>
         </div>
       </div>
       <div class="body">
