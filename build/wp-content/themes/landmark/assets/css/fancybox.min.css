@@ -172,10 +172,11 @@
 /* Title helper */
 .fancybox-title {
   visibility: hidden;
-  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
   position: relative;
   text-shadow: none;
   z-index: 8050; }
+  .fancybox-title p {
+    margin: 0 !important; }
 
 .fancybox-opened .fancybox-title {
   visibility: visible; }
@@ -210,7 +211,8 @@
   color: #fff; }
 
 .fancybox-title-inside-wrap {
-  padding-top: 10px; }
+  padding-top: 10px;
+  text-align: center; }
 
 .fancybox-title-over-wrap {
   position: absolute;

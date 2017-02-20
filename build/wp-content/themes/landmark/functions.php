@@ -7,5 +7,6 @@ require_once dirname(__FILE__) . '/lib/woocommerce.php';
 
 
 if(is_admin()) :
+	require_once dirname(__FILE__) . '/lib/admin.php';
 	require_once dirname(__FILE__) . '/lib/admin_acf.php';
 endif;

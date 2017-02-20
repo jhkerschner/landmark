@@ -981,6 +981,9 @@ svg {
 #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
   border-bottom: 1px solid rgba(0,0,0,0.3) !important;
 }
+.woocommerce #ship-to-different-address-checkbox {
+  vertical-align: middle;
+}
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
   border: none !important;
   margin-top: 0 !important;

@@ -2,30 +2,41 @@
 $(function(){
   MainNav.init();
   PointerEventsPolyfill.initialize({});
-  $('.bxslider').bxSlider({
-    nextSelector: '#bx-next',
-    prevSelector: '#bx-prev',
-    nextText: '',
-    prevText: '',
-    pager: false,
-    auto: true,
-    pause: 8000,
-    onSliderLoad: function() {
-      $('.bx-prev')[0].appendChild($('.slider-control-left svg')[0])
-      $('.bx-next')[0].appendChild($('.slider-control-right svg')[0])
-    }
-  });
+  if($('.page-template-home').length) {
+    $('.bxslider').bxSlider({
+      nextSelector: '#bx-next',
+      prevSelector: '#bx-prev',
+      nextText: '',
+      prevText: '',
+      pager: false,
+      auto: true,
+      pause: 8000,
+      autoHover: true,
+      onSliderLoad: function() {
+        $('.bx-prev')[0].appendChild($('.slider-control-left svg')[0])
+        $('.bx-next')[0].appendChild($('.slider-control-right svg')[0])
+      }
+    });
+  }
   
   if($('.page-template-gallery').length) {
     $(".fancybox").fancybox({
+      beforeLoad: function() {
+          this.title = $(this.element).attr('data-caption');
+      },
       nextEffect: 'none',
       prevEffect: 'none',
       margin: 50,
       showCloseButton: false,
       tpl: {
-        closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;" style="display: none;"></a>',
+        //closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;" style="display: none;"></a>',
         next     : '<a title="Next" class="fancybox-nav fancybox-next slider-control slider-control-left" href="javascript:;">'+galleryArrows.next+'</a>',
         prev     : '<a title="Previous" class="fancybox-nav fancybox-prev slider-control slider-control-right" href="javascript:;">'+galleryArrows.prev+'</a>'
+      },
+      helpers: {
+        title : {
+          type : 'inside' // 'float', 'inside', 'outside' or 'over'
+        }
       }
     });
   }

@@ -14,7 +14,7 @@ get_header();
     <div class="gallery">
       <?php $images = get_field('photos'); foreach( $images as $image ) : ?>
         <div class="gallery-image" style="background-image: url('<?php echo $image['url']; ?>')">
-          <a href="<?php echo $image['url']; ?>" class="fancybox" rel="group">
+          <a href="<?php echo $image['url']; ?>" data-caption="<p><?php echo $image['caption']; ?>" alt="<?php echo $image['alt']; ?></p>" class="fancybox" rel="group">
           </a>
         </div>
       <?php endforeach; ?>

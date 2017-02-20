@@ -27,20 +27,11 @@ get_header(); ?>
             endwhile; endif; ?>
         </div>
 
-        <div class="wysiwyg"><?php the_field('general_board_copy'); ?></div>
+        <div class="wysiwyg"><?php the_field('trustees_emeritus_copy'); ?></div>
         <div class="people">
           <?php
-          if(have_rows('general_board', 'option')) : 
-            while(have_rows('general_board', 'option')) : the_row(); 
-              get_template_part('template-parts/tp-team-member');
-            endwhile; endif; ?>
-        </div>
-
-        <div class="wysiwyg"><?php the_field('charter_trustees_copy'); ?></div>
-        <div class="people">
-          <?php
-          if(have_rows('charter_trustees', 'option')) : 
-            while(have_rows('charter_trustees', 'option')) : the_row(); 
+          if(have_rows('trustees_emeritus', 'option')) : 
+            while(have_rows('trustees_emeritus', 'option')) : the_row(); 
               get_template_part('template-parts/tp-team-member');
           endwhile; endif; ?>
         </div>

@@ -203,10 +203,12 @@
 
 .fancybox-title {
 	visibility: hidden;
-	font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
 	position: relative;
 	text-shadow: none;
 	z-index: 8050;
+	p{
+		margin: 0 !important;
+	}
 }
 
 .fancybox-opened .fancybox-title {
@@ -246,6 +248,7 @@
 
 .fancybox-title-inside-wrap {
 	padding-top: 10px;
+	text-align: center;
 }
 
 .fancybox-title-over-wrap {

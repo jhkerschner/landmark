@@ -32,7 +32,7 @@ get_header();
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
-						<?php if($event['ticket_link'] != '') : ?>
+						<?php if($event['ticket_link'] != '' && filter_var($event['ticket_link'], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) : ?>
 							<a class="cta-button" href="<?php echo $event['ticket_link']; ?>" target="_blank" data-event-category="External Link" data-event-action="Click" data-event-label="Events | <?php echo filter_var($event['title'], FILTER_SANITIZE_STRING); ?> | Tickets">Tickets</a>
 						<?php endif; ?>
 					</div>
