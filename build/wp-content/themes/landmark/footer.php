@@ -7,6 +7,10 @@
             <a class="footer-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home" data-event-category="In-Page Nav" data-event-action="Nav Click" data-event-label="Footer Logo"><?php include (get_template_directory().'/assets/images/footer-logo.svg'); ?></a>
           </div>
           <div class="footer-right-col">
+            <div class="affiliate-logos">
+              <a href="https://cnyarts.org/" target="_blank"><img src="<?php echo get_bloginfo('template_url').'/assets/images/cny-arts-logo.png'; ?>" alt="CNY Arts Logo"></a>
+              <a href="http://ongov.net/" target="_blank"><img src="<?php echo get_bloginfo('template_url').'/assets/images/onondaga-county-logo.png'; ?>" alt="Onondaga County Logo"></a>
+            </div>
             <?php if(have_rows('social_media_links', 'option')) : ?>
             <div class="social-icons">
             <?php while(have_rows('social_media_links', 'option')) : the_row(); 
