@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Sponsors
+Template Name: Corporate Sponsors
 */
 
 get_header();
@@ -10,19 +10,25 @@ get_header();
   <?php 
   if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <h1 class="entry-title"><?php the_title(); ?></h1>
+    <div class="wysiwyg"><?php the_content(); ?></div>
     <div class="corp-sponsors">
-      <a href="" class="corp-sponsor-logo">
-        <img src="<?php echo get_bloginfo('template_url').'/assets/images/lm-logo.png'; ?>" alt="Lockheed Martin Logo">
-      </a>
-      <a href="" class="corp-sponsor-logo">
-        <img src="<?php echo get_bloginfo('template_url').'/assets/images/lm-logo.png'; ?>" alt="Lockheed Martin Logo">
-      </a>
-      <a href="" class="corp-sponsor-logo">
-        <img src="<?php echo get_bloginfo('template_url').'/assets/images/lm-logo.png'; ?>" alt="Lockheed Martin Logo">
-      </a>
-      <a href="" class="corp-sponsor-logo">
-        <img src="<?php echo get_bloginfo('template_url').'/assets/images/lm-logo.png'; ?>" alt="Lockheed Martin Logo">
-      </a>
+      <?php 
+      if(have_rows('corporate_sponsors')) : 
+        while(have_rows('corporate_sponsors')) : the_row();
+        $sponsor = get_sub_field('sponsor_logo');
+        ?>
+
+          <div class="corp-sponsor-logo">
+            <?php if(get_sub_field('sponsor_url')) : ?>
+            <a href="<?php echo get_sub_field('sponsor_url'); ?>" target="_blank">
+            <?php endif; ?>
+              <img src="<?php echo $sponsor['url']; ?>" alt="<?php echo $sponsor['alt']; ?>">
+            <?php if(get_sub_field('sponsor_url')) : ?>
+            </a>
+            <?php endif; ?>
+          </div>
+
+    <?php endwhile; endif; ?>
     </div>
 
   <?php endwhile; endif; ?>
