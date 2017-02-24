@@ -20,7 +20,7 @@ get_header();
 
           <div class="corp-sponsor-logo">
             <?php if(get_sub_field('sponsor_url')) : ?>
-            <a href="<?php echo get_sub_field('sponsor_url'); ?>" target="_blank">
+            <a href="<?php echo get_sub_field('sponsor_url'); ?>" target="_blank" data-event-category="External Link" data-event-action="Click" data-event-label="Corporate Sponsor | <?php echo get_sub_field('sponsor_url'); ?>">
             <?php endif; ?>
               <img src="<?php echo $sponsor['url']; ?>" alt="<?php echo $sponsor['alt']; ?>">
             <?php if(get_sub_field('sponsor_url')) : ?>
