@@ -19,13 +19,15 @@ get_header();
         ?>
 
           <div class="corp-sponsor-logo">
-            <?php if(get_sub_field('sponsor_url')) : ?>
-            <a href="<?php echo get_sub_field('sponsor_url'); ?>" target="_blank">
-            <?php endif; ?>
-              <img src="<?php echo $sponsor['url']; ?>" alt="<?php echo $sponsor['alt']; ?>">
-            <?php if(get_sub_field('sponsor_url')) : ?>
-            </a>
-            <?php endif; ?>
+            <div class="img-wrapper">
+              <?php if(get_sub_field('sponsor_url')) : ?>
+              <a href="<?php echo get_sub_field('sponsor_url'); ?>" target="_blank">
+              <?php endif; ?>
+                <img src="<?php echo $sponsor['url']; ?>" alt="<?php echo $sponsor['alt']; ?>">
+              <?php if(get_sub_field('sponsor_url')) : ?>
+              </a>
+              <?php endif; ?>
+            </div>
           </div>
 
     <?php endwhile; endif; ?>

@@ -815,46 +815,68 @@ svg {
   padding: 1rem 0;
 }
 .corp-sponsor-logo {
-  padding-left: gutter();
+  height: 180px;
   display: block;
   margin: 0 0 1rem;
   max-width: 320px;
   
+  .img-wrapper {
+    padding-left: gutter();
+  }
   img {
     width: 100%;
     height: auto;
   }
 
-  &:first-child {
-    border-left: none;
-  }
-
   @media screen and (min-width: 520px) {
     max-width:none;
-    border-left: 1px solid $brown;
-    &:nth-child(3n) {
-      border-left: none;
-    }
+
     @include span(6 of 12);
 
     &:nth-child(2n) {
       @include span(last 6 of 12);
     }
-  }
-  @media screen and (min-width: $tablet) {
-    &:nth-child(3n) {
+
+    .img-wrapper {
       border-left: 1px solid $brown;
     }
-    &:nth-child(5n) {
-      border-left: none;
+    &:first-child {
+      .img-wrapper {
+        border-left: none;
+      }
     }
+    &:nth-child(2n + 1) {
+      .img-wrapper {
+        border-left: none;
+      }
+    }
+  }
+  @media screen and (min-width: $tablet) {
     @include span(3 of 12);
 
     &:nth-child(2n) {
       @include span(3 of 12);
     }
-    &:nth-child(3n) {
+    &:nth-child(4n) {
       @include span(last 3 of 12);
+    }
+
+    &:nth-child(2n + 1) {
+      .img-wrapper {
+        border-left: 1px solid $brown;
+      }
+    }
+
+    &:first-child {
+      .img-wrapper {
+        border-left: none;
+      }
+    }
+    
+    &:nth-child(5n) {
+      .img-wrapper {
+        border-left: none;
+      }
     }
   }
 }
