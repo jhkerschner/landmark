@@ -49,7 +49,7 @@ function create_post_types() {
 
 	$ctas_args = array(
 		'labels'             => $ctas_labels,
-		'public'             => true,
+		'public'             => false,
 		'publicly_queryable' => false,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
