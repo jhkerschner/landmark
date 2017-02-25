@@ -53,7 +53,7 @@ function landmark_load_scripts()
 
   wp_enqueue_script( 'ie-polys', get_template_directory_uri() . '/assets/js/ie-polys.js', array(), filemtime(get_template_directory() . '/assets/js/ie-polys.js'), true );
 
-	wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAzwTdKCf1emgz3MeBCNQHDDVVcT_esQic&libraries=places&callback=initMap', array(), '', true);
+	wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDxDSZQFU5RrDDMbVOvSfRketV9nLkL4TA&libraries=places&callback=initMap', array(), '', true);
 	
 }
 
