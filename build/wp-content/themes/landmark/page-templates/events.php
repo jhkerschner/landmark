@@ -22,6 +22,10 @@ get_header();
 						<h2 class="event-title"><?php echo $event['title']; ?></h2>
 						<?php if($time != '') :?>
 							<div class="event-time">
+							<?php if($id === 10231) : //lion king, not controlled by the landmark ?>
+									<p class="event-date"><?php echo $event_date; ?></p>
+									<ul><li>Please click the ticket link to see available dates/times.</li></ul>
+							<?php else :?>
 								<?php if($time['multiple_time'] && $time['time'] != '') : ?>
 									<p class="event-date"><?php echo $event_date; ?></p>
 									<?php echo  $time['time']; ?>
@@ -30,6 +34,7 @@ get_header();
 								<?php else: ?>
 									<p class="event-date"><?php echo $event_date; ?></p>
 								<?php endif; ?>
+							<?php endif; ?>
 							</div>
 						<?php endif; ?>
 						<?php if($event['ticket_link'] != '' && filter_var($event['ticket_link'], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) : ?>

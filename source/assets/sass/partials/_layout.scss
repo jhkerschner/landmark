@@ -401,13 +401,14 @@ svg {
   }
 
   @include breakpoint(860px){
+    top:55%;
     right: 80px;
     font-size: 14px;
     width: 100%;
   }
 
   @include breakpoint($desktop){
-    top:34%;
+    top:55%;
     font-size: 16px;
   }
   @include breakpoint($widescreen){
