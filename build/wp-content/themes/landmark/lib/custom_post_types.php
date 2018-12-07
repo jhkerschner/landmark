@@ -1,4 +1,26 @@
 <?php
+/*
+  Setup verbose page rule. This will allow page slugs to have a higher priority than CPTs.
+  This needs to be done before the CPTs are created.
+*/
+add_action( 'init', 'wpse16902_init' );
+function wpse16902_init() {
+    $GLOBALS['wp_rewrite']->use_verbose_page_rules = true;
+}
+
+add_filter( 'page_rewrite_rules', 'wpse16902_collect_page_rewrite_rules' );
+function wpse16902_collect_page_rewrite_rules( $page_rewrite_rules )
+{
+    $GLOBALS['wpse16902_page_rewrite_rules'] = $page_rewrite_rules;
+    return array();
+}
+
+add_filter( 'rewrite_rules_array', 'wspe16902_prepend_page_rewrite_rules' );
+function wspe16902_prepend_page_rewrite_rules( $rewrite_rules )
+{
+    return $GLOBALS['wpse16902_page_rewrite_rules'] + $rewrite_rules;
+}
+
 add_action( 'init', 'create_post_types' );
 function create_post_types() {
   	$feature_labels = array(
@@ -101,4 +123,35 @@ function create_post_types() {
 	);
 
 	register_taxonomy( 'team_categories', 'team', $team_tax_args );
+
+
+	$event_labels = array(
+		'name'               => __( 'Events' ),
+		'singular_name'      => __( 'Event' ),
+		'menu_name'          => __( 'Events' ),
+		'add_new'            => __( 'Add Event'),
+		'add_new_item'       => __( 'Add New Event' ),
+		'new_item'           => __( 'New Event' ),
+		'edit_item'          => __( 'Edit Event' ),
+		'view_item'          => __( 'View Event' ),
+		'all_items'          => __( 'All Events' ),
+		'search_items'       => __( 'Search Events' ),
+		'not_found'          => __( 'No Events found.' ),
+		'not_found_in_trash' => __( 'No Events found in Trash.' )
+	);
+
+	$event_args = array(
+		'labels'             => $event_labels,
+		'public'             => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => false,
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor' )
+	);
+
+	register_post_type( 'events', $event_args );
 }

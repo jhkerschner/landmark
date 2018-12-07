@@ -122,3 +122,41 @@ function process_event_times($start, $end, $multiple) {
 	return array('multiple_time'=>$multiple_time, 'time'=>$time_str);
 
 }
+
+function format_dates( $start_date, $end_date, $time ) {
+	$start = new DateTime($start_date);
+	$start_year = $start->format('Y');
+
+	if( $start_date == $end_date ) :
+		$date = $start->format('F j, Y');
+		if( $time ) :
+			$date .= ' &ndash; '.$time;
+		endif;
+		echo $date;
+		return false;
+	endif;
+
+	$end = new DateTime($end_date);
+	$end_year = $end->format('Y');
+
+	if($start_year === $end_year) :
+		//start and end year are the same, only show year after the end date
+		echo $start->format('F j').' &ndash; '.$end->format('F j, Y');
+	else :
+		//start and end year are not the same, show year after start and end date
+		echo $start->format('F j, Y').' &ndash; '.$end->format('F j, Y');
+	endif;
+}
+
+function process_date_times( $string ) {
+	$dates_times_array = explode( '<br />', $string );
+
+	$str = '<ul>';
+	foreach( $dates_times_array as $dt ) :
+		$str .= '<li>'.trim($dt).'</li>';
+	endforeach;
+	$str .= '<ul>';
+
+	echo $str;
+}
+

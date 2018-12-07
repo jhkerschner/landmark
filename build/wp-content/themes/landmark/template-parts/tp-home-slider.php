@@ -24,8 +24,7 @@
           <?php 
           if(get_field('include_cta', $slide_id) === 'Yes') :
             if(get_field('link_type', $slide_id) == 'link_to_event') :
-              $event_id = get_field('link_to_event', $slide_id);
-              $slide_url = get_site_url().'/events/calendar/#event-'.$event_id;
+              $slide_url = get_field('link_to_event', $slide_id);
             elseif(get_field('link_type', $slide_id) == 'page_link') :
               $slide_url = get_field('page_link', $slide_id);
             else :
