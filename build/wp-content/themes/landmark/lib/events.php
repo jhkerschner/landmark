@@ -1,38 +1,4 @@
 <?php
-function get_landmark_events() {
-	$token = 'LaEedmyDYiOqEwCKsfti';
-	$start_date = date('Y-m-d');
-	$json = file_get_contents('https://cnyarts.org/api/eventsearch?t='.$token.'&ds='.$start_date);
-
-	$events = json_decode($json,true);
-
-	$grouped_events = array();
-	foreach($events as $event) :
-		if(!array_key_exists($event['id'], $grouped_events)) :
-			$grouped_events[$event['id']] = array(
-				'title' => $event['title'],
-				'description' => $event['description'],
-				'image' => str_replace('http://','https://',$event['main_image']),
-				'ticket_link' => $event['ticket_link'],
-				'dates' => array($event['event_date']),
-				'start_times' => array($event['start_time']),
-				'end_times' => array($event['end_time']),
-				'multiple_times' => array($event['multiple_times'])
-
-				);
-		elseif(array_key_exists($event['id'], $grouped_events)):
-			$grouped_events[$event['id']]['dates'][] = $event['event_date'];
-			$grouped_events[$event['id']]['start_times'][] = $event['start_time'];
-			$grouped_events[$event['id']]['end_times'][] = $event['end_time'];
-			$grouped_events[$event['id']]['multiple_times'][] = $event['multiple_times'];
-		else :
-			//nothing to do
-		endif;
-	endforeach;
-
-	return $grouped_events;
-}
-
 function process_event_dates($dates) {
 	$num_dates = count($dates);
 	if($num_dates > 1) :

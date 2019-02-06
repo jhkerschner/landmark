@@ -48,7 +48,7 @@ $events = get_posts( $args );
 					<div class="event-description">
 						<?php the_excerpt(); ?>
 					</div>
-					<a class="cta-button" href="<?php the_permalink(); ?>" target="_blank" data-event-category="In-Page Nav" data-event-action="Click" data-event-label="Events | <?php the_title(); ?> | Read More">Read More</a>
+					<a class="cta-button" href="<?php the_permalink(); ?>" data-event-category="In-Page Nav" data-event-action="Click" data-event-label="Events | <?php the_title(); ?> | Read More">Read More</a>
 				</div>
 			<?php endforeach; wp_reset_postdata(); ?>
 		</div>
