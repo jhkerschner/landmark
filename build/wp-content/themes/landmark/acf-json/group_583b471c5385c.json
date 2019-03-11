@@ -1,0 +1,342 @@
+{
+    "key": "group_583b471c5385c",
+    "title": "Homepage Slides",
+    "fields": [
+        {
+            "key": "field_583b473467147",
+            "label": "Slide Image",
+            "name": "slide_image",
+            "type": "image",
+            "instructions": "This image must be 1400px wide by 810px tall.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 1400,
+            "min_height": 810,
+            "min_size": "",
+            "max_width": 1400,
+            "max_height": 810,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_583b483167149",
+            "label": "Slide Heading",
+            "name": "slide_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_583b483e6714a",
+            "label": "Slide Sub Heading",
+            "name": "slide_sub_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_583b48e46714b",
+            "label": "Date Type",
+            "name": "date_type",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "multiple": 0,
+            "allow_null": 0,
+            "choices": {
+                "Single Date": "Single Date",
+                "Date Range": "Date Range"
+            },
+            "default_value": [],
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value"
+        },
+        {
+            "key": "field_583b49346714c",
+            "label": "Start Date",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 0
+        },
+        {
+            "key": "field_583b4b8e6714e",
+            "label": "End Date",
+            "name": "end_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_583b48e46714b",
+                        "operator": "==",
+                        "value": "Date Range"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 0
+        },
+        {
+            "key": "field_583b4b4b6714d",
+            "label": "Time",
+            "name": "time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_583b48e46714b",
+                        "operator": "==",
+                        "value": "Single Date"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:iA"
+        },
+        {
+            "key": "field_58838a449caca",
+            "label": "Include CTA?",
+            "name": "include_cta",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "horizontal",
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "default_value": "",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58838946ba88c",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58838a449caca",
+                        "operator": "==",
+                        "value": "Yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Learn More",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_58a89a2ee5d69",
+            "label": "Link Type",
+            "name": "link_type",
+            "type": "radio",
+            "instructions": "<p>Select the type of link the slide will have.<\/p>\r\n<p><strong>Link to Event<\/strong>: This will provide a list of the events that are currently showing on the calendar page. These events are pulled in from CNYARTS.com, they are NOT created on this site.<\/p>\r\n<p><strong>Page Link<\/strong>: This will provide a list of all the pages with in the site. Pages are those items that are added via the \"Pages\" section in the admin area. This option will be used when there is a need to link to a custom event page that HAS been created on this site.<\/p>",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58838a449caca",
+                        "operator": "==",
+                        "value": "Yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "link_to_event": "Link to Event",
+                "page_link": "Page Link"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_588ca5a5f9afe",
+            "label": "Link to Event",
+            "name": "link_to_event",
+            "type": "page_link",
+            "instructions": "This will add a link to the slide that will link to the calendar page and auto scroll the user to the event.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58838a449caca",
+                        "operator": "==",
+                        "value": "Yes"
+                    },
+                    {
+                        "field": "field_58a89a2ee5d69",
+                        "operator": "==",
+                        "value": "link_to_event"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "events"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0,
+            "choices": {
+                "14008": "The Sound of Music",
+                "14604": "It's a Wonderful Life",
+                "13529": "Darci Lynne",
+                "14009": "Rodgers & Hammerstein's Cinderella",
+                "14581": "Steve Martin & Martin Short",
+                "14333": "Paw Patrol Live! ",
+                "14010": "Les Miserables",
+                "14558": "Experience Hendrix",
+                "14702": "PJ Masks Live",
+                "14011": "The Book                                                                                                          of Mormon    ",
+                "14793": "Rock of Ages",
+                "14699": "\"Weird Al\" Yankovic: The Strings Attached Tour 2019"
+            }
+        },
+        {
+            "key": "field_58a898a9e5d67",
+            "label": "Page Link",
+            "name": "page_link",
+            "type": "page_link",
+            "instructions": "Use this to link the slide to a page within the site.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58838a449caca",
+                        "operator": "==",
+                        "value": "Yes"
+                    },
+                    {
+                        "field": "field_58a89a2ee5d69",
+                        "operator": "==",
+                        "value": "page_link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "home_slides"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1544139745
+}

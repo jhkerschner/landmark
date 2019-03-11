@@ -9,7 +9,7 @@ $args = array(
 	'meta_key'			=> 'start_date',
 	'orderby'			=> 'meta_value',
 	'order'				=> 'ASC',
-	'post_type'        => 'events'
+	'post_type'        => 'landmark_events'
 );
 $events = get_posts( $args );
 
@@ -29,10 +29,12 @@ $events = get_posts( $args );
 				//the_field('dates_times');
 			?>
 				<div id="event-<?php echo $id; ?>" class="event">
-					<?php if( $image ) : ?>
+					<?php 
+					$hasImage = false;
+					if( $image ) : $hasImage = true; ?>
 						<img class="event-image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 					<?php endif; ?>
-					<div class="event-info">
+					<div class="event-info"<?php if( !$hasImage ) : echo' style="float:none; width:100%;"'; endif; ?>>
 						<h2 class="event-title"><?php the_title(); ?></h2>
 							<div class="event-time">
 								<p class="event-date"><?php format_dates( get_field('start_date'), get_field('end_date'), get_field('time') ); ?></p>

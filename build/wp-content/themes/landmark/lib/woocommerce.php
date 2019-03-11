@@ -66,3 +66,18 @@ function remove_wc_metaboxes() {
      remove_meta_box( 'tagsdiv-product_tag' , 'product' , 'side' );
      remove_meta_box( 'woocommerce-product-images' , 'product' , 'side' );
 }
+
+add_action('pre_get_posts','shop_filter_cat');
+
+function shop_filter_cat($query) {
+    if (!is_admin() && is_post_type_archive( 'product' ) && $query->is_main_query()) {
+        $query->set('tax_query', array(
+            array (
+                'taxonomy' => 'product_cat',
+                'field' => 'slug',
+                'terms' => 'memberships'
+                )
+            )
+        );   
+    }
+}

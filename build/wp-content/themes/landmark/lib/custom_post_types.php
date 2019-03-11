@@ -150,8 +150,9 @@ function create_post_types() {
 		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor' )
+		'supports'           => array( 'title', 'editor' ),
+		'rewrite'			 => array('slug'=>'event','with_front'=>false)
 	);
 
-	register_post_type( 'events', $event_args );
+	register_post_type( 'landmark_events', $event_args );
 }

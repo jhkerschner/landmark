@@ -8,10 +8,12 @@ if( have_posts() ) : while( have_posts() ) : the_post();
 		<div class="left-col events">
 			<h1><?php the_title(); ?></h1>
 				<div class="event">
-					<?php if( $image = get_field('image') ) : ?>
+					<?php 
+					$hasImage = false;
+					if( $image = get_field('image') ) : $hasImage = true; ?>
 						<img class="event-image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 					<?php endif; ?>
-					<div class="event-info">
+					<div class="event-info"<?php if(!$hasImage) : echo' style="float:none; width:100%;"'; endif; ?>>
 							<div class="event-time">
 								<p class="event-date"><?php format_dates( get_field('start_date'), get_field('end_date'), get_field('time') ); ?></p>
 								<?php if( $date_times = get_field('dates_times') ) :

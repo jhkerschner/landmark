@@ -1,0 +1,133 @@
+{
+    "key": "group_5c0719921920f",
+    "title": "Events",
+    "fields": [
+        {
+            "key": "field_5c071be2f4020",
+            "label": "Start Date",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "m\/d\/Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5c071a865e66f",
+            "label": "End Date",
+            "name": "end_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "m\/d\/Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5c09ac2c743f1",
+            "label": "Time",
+            "name": "time",
+            "type": "time_picker",
+            "instructions": "This will only show if the start and end date are the same. To indicate specific times for dates, use the Dates\/Times field below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a"
+        },
+        {
+            "key": "field_5c0719a35e66c",
+            "label": "Dates\/Times",
+            "name": "dates_times",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5c071a455e66e",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "This image must be 600x450",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 600,
+            "min_height": 450,
+            "min_size": "",
+            "max_width": 600,
+            "max_height": 450,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c0719975e66b",
+            "label": "Ticket Link",
+            "name": "ticket_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1544137822
+}
