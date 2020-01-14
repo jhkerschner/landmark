@@ -2,6 +2,10 @@
 // base form elements
 // ----------------------------------------------------------
 
+.grecaptcha-badge {
+  display: none !important;
+}
+
 //defined in mixins partials
 #{$all-text-inputs}{
   width: 100%;

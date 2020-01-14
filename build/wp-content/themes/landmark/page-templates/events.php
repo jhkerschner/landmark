@@ -43,7 +43,7 @@ $events = get_posts( $args );
 								endif; ?>
 
 							</div>
-						<?php if($ticket_link != '' && filter_var($ticket_link, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) : ?>
+						<?php if($ticket_link != '' /*&& filter_var($ticket_link, FILTER_VALIDATE_URL)*/) : ?>
 							<a class="cta-button" href="<?php echo $ticket_link; ?>" target="_blank" data-event-category="External Link" data-event-action="Click" data-event-label="Events | <?php the_title(); ?> | Tickets">Tickets</a>
 						<?php endif; ?>
 					</div>

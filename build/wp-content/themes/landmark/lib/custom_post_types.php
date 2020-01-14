@@ -3,7 +3,7 @@
   Setup verbose page rule. This will allow page slugs to have a higher priority than CPTs.
   This needs to be done before the CPTs are created.
 */
-add_action( 'init', 'wpse16902_init' );
+/*add_action( 'init', 'wpse16902_init' );
 function wpse16902_init() {
     $GLOBALS['wp_rewrite']->use_verbose_page_rules = true;
 }
@@ -20,7 +20,7 @@ function wspe16902_prepend_page_rewrite_rules( $rewrite_rules )
 {
     return $GLOBALS['wpse16902_page_rewrite_rules'] + $rewrite_rules;
 }
-
+*/
 add_action( 'init', 'create_post_types' );
 function create_post_types() {
   	$feature_labels = array(
@@ -49,7 +49,8 @@ function create_post_types() {
 		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title' )
+		'supports'           => array( 'title' ),
+		'rewrite'			 => array('slug'=>'homepageslides','with_front'=>false)
 	);
 
 	register_post_type( 'home_slides', $feature_args );

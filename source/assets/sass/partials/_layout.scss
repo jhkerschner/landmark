@@ -134,13 +134,13 @@ svg {
     }
 
     @include breakpoint($desktop){
-      @include span(2 of 10);
+      @include span(2 of 11);
 
       &:nth-child(2n) {
-        @include span(2 of 10);
+        @include span(2 of 11);
       }
       &:last-child {
-        @include span(last 2 of 10);
+        @include span(last 2 of 11);
       }
     }
 

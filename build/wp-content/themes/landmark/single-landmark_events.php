@@ -22,7 +22,7 @@ if( have_posts() ) : while( have_posts() ) : the_post();
 							</div>
 						<?php 
 						$ticket_link = get_field('ticket_link');
-						if($ticket_link != '' && filter_var($ticket_link, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) : ?>
+						if($ticket_link != '' /*&& filter_var($ticket_link, FILTER_VALIDATE_URL)*/) : ?>
 							<a class="cta-button" href="<?php echo $ticket_link; ?>" target="_blank" data-event-category="External Link" data-event-action="Click" data-event-label="Events | <?php the_title(); ?> | Tickets">Tickets</a>
 						<?php endif; ?>
 					</div>
